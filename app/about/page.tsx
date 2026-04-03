@@ -10,7 +10,7 @@ const EXPERIENCES = [
   {
      year: "2026 - Present",
      role: "Lead VTOL Architect",
-     company: "AeroGlass Aeronautics",
+     company: "MOHD SAYEED S MULLA Aeronautics",
      desc: "Spearheaded the design of next-generation autonomous flight systems focusing on weightless core philosophy and neural object tracking."
   },
   {

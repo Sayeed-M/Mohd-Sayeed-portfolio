@@ -20,7 +20,7 @@ export function ChatUI() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "model",
-      parts: "Welcome to the AeroGlass Interactive Terminal. How can I assist you with project analytics, skills breakdowns, or aerospace concepts today?",
+      parts: "Welcome to the MOHD SAYEED S MULLA Interactive Terminal. How can I assist you with project analytics, skills breakdowns, or aerospace concepts today?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -95,7 +95,7 @@ export function ChatUI() {
                    <Bot size={24} className="text-white relative z-10" />
                 </div>
                 <div>
-                  <h2 className="font-display font-bold text-xl text-slate-800 tracking-tight">AeroGlass AI Core</h2>
+                  <h2 className="font-display font-bold text-xl text-slate-800 tracking-tight">MOHD SAYEED S MULLA AI Core</h2>
                   <div className="flex items-center gap-2 mt-1">
                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_#22c55e]" />
                     <span className="font-manrope text-xs font-semibold text-slate-500 uppercase tracking-wider">System Online</span>

@@ -15,7 +15,7 @@ export function AIChatbot() {
     {
       role: "assistant",
       content:
-        "AeroGlass Concierge online. I can brief you on engineering specs, project architecture, and the technology stack powering this portfolio. What's your query?",
+        "MOHD SAYEED S MULLA Concierge online. I can brief you on engineering specs, project architecture, and the technology stack powering this portfolio. What's your query?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -123,7 +123,7 @@ export function AIChatbot() {
                 <Bot size={18} className="text-white" />
               </div>
               <div>
-                <p className="font-display font-bold text-sm text-surface-on dark:text-gray-200">AeroGlass Concierge</p>
+                <p className="font-display font-bold text-sm text-surface-on dark:text-gray-200">MOHD SAYEED S MULLA Concierge</p>
                 <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                   <p className="font-manrope text-xs text-slate-500 dark:text-gray-400">AI System Online</p>

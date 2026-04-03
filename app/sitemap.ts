@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aeroglass-systems.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://MOHD SAYEED S MULLA-systems.com';
 
   const routes = [
     '',

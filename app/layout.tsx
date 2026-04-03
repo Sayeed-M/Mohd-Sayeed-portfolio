@@ -3,6 +3,7 @@ import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { AIChatbot } from "@/components/AIChatbot";
 import { Providers } from "./providers";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -15,15 +16,15 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Mohd Sayeed S Mulla | AI & Aerospace Developer",
+  title: "Mohd Sayeed S Mulla | Application / Flutter Developer",
   description:
-    "Portfolio of Mohd Sayeed S Mulla. Specialized in high-performance autonomous drone design, VTOL logic, WebGL interactive interfaces, and Full-Stack scalable application development.",
-  keywords: ["VTOL", "drone", "portfolio", "Next.js", "Three.js", "React", "AI", "Machine Learning", "Aerospace Engineering"],
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://aeroglass-systems.com'),
+    "Portfolio of Mohd Sayeed S Mulla. Specialized in high-performance application design, Android/iOS systems, and Full-Stack scalable application development.",
+  keywords: ["Application Developer", "Flutter", "portfolio", "Next.js", "Android", "React", "AI", "Machine Learning", "VTOL"],
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://sayeed.dev'),
   openGraph: {
     type: "website",
-    title: "Mohd Sayeed S Mulla | AI & Drone Developer",
-    description: "Bridging autonomous aerospace systems with cutting-edge full-stack software and 3D web experiences.",
+    title: "Mohd Sayeed S Mulla | Full Stack Developer",
+    description: "Bridging intelligent apps with AI & innovation.",
     url: "/",
     siteName: "Mohd Sayeed Portfolio",
     images: [{
@@ -35,10 +36,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohd Sayeed S Mulla | AI & Drone Developer",
-    description: "Interactive portfolio detailing projects across Next.js, VTOL systems, and AI processing.",
+    title: "Mohd Sayeed S Mulla | Full Stack Developer",
+    description: "Interactive portfolio detailing projects across Next.js, Flutter, Android, and AI.",
     images: ["/assets/profile.jpg"],
-    creator: "@AeroGlassSystem",
+    creator: "@MohdSayeed",
   },
 };
 
@@ -53,9 +54,16 @@ export default function RootLayout({
       className={`${inter.variable} ${manrope.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col relative">
         <Providers>
-            {children}
+            {/* The wrapper content flex-grow pushes footer to bottom automatically */}
+            <div className="flex-grow flex flex-col">
+              {children}
+            </div>
+            
+            {/* Global Static Footer */}
+            <Footer />
+
             {/* Global Floating AI Chatbot */}
             <AIChatbot />
         </Providers>

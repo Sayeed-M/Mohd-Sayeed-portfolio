@@ -38,7 +38,7 @@ const RESEARCH_DATA: BlogData[] = [
 ];
 
 export const metadata = {
-  title: "Research & Analytics - AeroGlass Portfolio",
+  title: "Research & Analytics - MOHD SAYEED S MULLA Portfolio",
 };
 
 export default function ResearchPage() {

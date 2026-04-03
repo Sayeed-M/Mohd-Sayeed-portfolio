@@ -2,7 +2,7 @@ import React from 'react';
 import { DemoViewer } from '@/components/DemoViewer';
 
 export const metadata = {
-  title: "Live Demos - AeroGlass Portfolio",
+  title: "Live Demos - MOHD SAYEED S MULLA Portfolio",
   description: "Interactive visual pipelines and simulations.",
 };
 

@@ -7,7 +7,7 @@ export function Navbar() {
     <nav className="fixed top-0 inset-x-0 z-50 p-6 flex items-center justify-between pointer-events-auto">
       <div className="absolute inset-0 bg-surface/60 backdrop-blur-md border-b border-outline-variant/20 -z-10" />
       <div className="font-display font-bold text-2xl tracking-tight text-on-surface">
-         AeroGlass.
+         MOHD SAYEED S MULLA.
       </div>
       <div className="hidden md:flex items-center gap-6 lg:gap-8 font-manrope text-[12px] lg:text-[13px] font-semibold text-on-surface-variant flex-wrap">
          <Link href="/" className="hover:text-primary transition-colors">Home</Link>

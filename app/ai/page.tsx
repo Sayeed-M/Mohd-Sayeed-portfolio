@@ -2,7 +2,7 @@ import React from 'react';
 import { ChatUI } from '@/components/ChatUI';
 
 export const metadata = {
-  title: "AI Assistant - AeroGlass Portfolio",
+  title: "AI Assistant - MOHD SAYEED S MULLA Portfolio",
   description: "Interact directly with the portfolio neural core.",
 };
 

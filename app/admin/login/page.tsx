@@ -47,7 +47,7 @@ export default function AdminLoginPage() {
             </div>
             <div>
               <p className="font-display font-bold text-on-surface text-lg tracking-tight">
-                AeroGlass Admin
+                MOHD SAYEED S MULLA Admin
               </p>
               <p className="font-manrope text-xs text-on-surface-variant">
                 Secure Command Interface
