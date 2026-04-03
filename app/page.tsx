@@ -54,30 +54,50 @@ export default function HomePage() {
         </div>
 
         {/* Hero Text Content */}
-        <motion.div
-          className="absolute inset-0 z-20 pointer-events-none flex flex-col items-center justify-center text-center px-6"
-          style={{ opacity: heroOpacity, y: contentY }}
-        >
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 md:p-12 z-20 pointer-events-none">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            style={{ y: contentY, opacity: heroOpacity }}
+            className="flex flex-col items-center max-w-4xl text-center"
           >
-            <span className="inline-block font-manrope text-xs font-bold uppercase tracking-[0.3em] text-primary mb-6 pointer-events-auto">
-              VTOL Engineering Portfolio
-            </span>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.03em] text-on-surface mb-6 max-w-4xl leading-none pointer-events-auto">
-              The{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-[#3b82f6] to-tertiary">
-                Weightless
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.1, type: "spring", stiffness: 200, damping: 20 }}
+              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/10 dark:bg-black/30 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg shadow-black/5 mb-8"
+            >
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_var(--color-primary)]" />
+              <span className="text-sm font-semibold tracking-wide text-on-surface uppercase">
+                System Online
               </span>
-              <br />
-              Core
-            </h1>
-            <p className="font-manrope text-lg md:text-xl text-on-surface-variant max-w-xl mx-auto leading-relaxed mb-10 pointer-events-auto">
-              Precision-engineered autonomous VTOL systems and premium WebGL
-              interfaces — where hardware meets atmosphere.
-            </p>
+            </motion.div>
+
+            <motion.h1
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
+              className="font-display text-5xl md:text-7xl lg:text-8xl font-black text-on-surface tracking-tight leading-[0.9] mb-6 drop-shadow-sm"
+            >
+              MOHD SAYEED<br />
+              S MULLA.
+            </motion.h1>
+
+            <motion.h2
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, type: "spring", stiffness: 100 }}
+              className="font-manrope text-lg md:text-2xl text-primary font-bold tracking-tight mb-6"
+            >
+              AI & Robotics Developer | Flutter & Application Developer
+            </motion.h2>
+
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
+              className="font-manrope text-base md:text-lg text-on-surface-variant max-w-2xl leading-relaxed mb-10"
+            >
+              Bridging precise aerospace hardware with intelligent, cross-platform software. I build systems that process the world in real-time, from deep embedded flight controllers to production-grade mobile applications.
+            </motion.p>
             <div className="flex items-center justify-center gap-4 pointer-events-auto">
               <Link
                 href="/projects"
@@ -93,7 +113,7 @@ export default function HomePage() {
               </Link>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
 
         {/* Scroll indicator */}
         <motion.div

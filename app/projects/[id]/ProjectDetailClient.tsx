@@ -41,12 +41,19 @@ export default function ProjectDetailClient({ project }: { project: ProjectData 
                 >
                     <MouseGlowBorder className="h-full rounded-3xl">
                         <GlassmorphismPanel containerType="low" className="p-3 w-full h-full relative rounded-3xl bg-white/40 border-white/50 backdrop-blur-2xl shadow-xl overflow-hidden">
-                            {/* Inner Screen rendering frames */}
-                            <div className="absolute inset-4 rounded-2xl bg-slate-900 border border-slate-700 shadow-inner overflow-hidden group-hover:scale-[1.02] transition-transform duration-700 ease-out">
-                                <FrameSequencePlayer folderPath={project.mediaFolder} frameCount={project.mediaFrames} />
+                            {/* Inner Screen rendering conditional media */}
+                            <div className="absolute inset-4 rounded-2xl bg-surface-container-high border border-outline-variant/30 shadow-inner overflow-hidden group-hover:scale-[1.02] transition-transform duration-700 ease-out flex items-center justify-center">
+                                {project.mediaFolder && project.mediaFrames ? (
+                                    <FrameSequencePlayer folderPath={project.mediaFolder} frameCount={project.mediaFrames} />
+                                ) : (
+                                    <div className="flex flex-col items-center justify-center text-primary/40 dark:text-primary/60">
+                                        <Code size={80} strokeWidth={1} />
+                                        <span className="font-display font-semibold tracking-widest mt-4 uppercase text-xs">Runtime Engine</span>
+                                    </div>
+                                )}
                             </div>
                             {/* Decorative badge overlay */}
-                            <div className="absolute top-8 left-8 z-10 px-4 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/10 flex items-center gap-2 shadow-sm">
+                            <div className="absolute top-8 left-8 z-10 px-4 py-2 bg-surface backdrop-blur-md rounded-full border border-outline-variant/30 flex items-center gap-2 shadow-sm">
                                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                                 <span className="font-manrope text-[10px] font-bold text-white uppercase tracking-widest">Active Render Thread</span>
                             </div>

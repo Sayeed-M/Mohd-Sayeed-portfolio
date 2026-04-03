@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { AIChatbot } from "@/components/AIChatbot";
+import { Providers } from "./providers";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,11 +30,14 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${manrope.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        {children}
-        {/* Global Floating AI Chatbot */}
-        <AIChatbot />
+        <Providers>
+            {children}
+            {/* Global Floating AI Chatbot */}
+            <AIChatbot />
+        </Providers>
       </body>
     </html>
   );

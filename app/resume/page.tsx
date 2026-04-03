@@ -39,12 +39,13 @@ export default function ResumePage() {
                 <div className="bg-white p-8 md:p-14 lg:p-20 rounded-3xl md:border md:border-slate-200 md:shadow-2xl print:shadow-none print:border-none print:p-0 print:m-0 w-full min-h-[1056px] text-slate-800">
                     
                     {/* Header */}
-                    <header className="border-b-2 border-slate-900 pb-8 mb-10 text-center md:text-left">
-                        <h1 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight mb-2">MOHD SAYEED S MULLA</h1>
-                        <h2 className="font-manrope text-xl md:text-2xl font-semibold text-[#0058bc] tracking-wide uppercase mb-4">AI & Embedded Drone Systems Engineer</h2>
-                        <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 font-manrope text-sm font-medium text-slate-600">
-                            <span>mohdsayeedmulla112@gmail.com</span>
-                            <span>github.com/mhdsayeed</span>
+                    <header className="border-b-2 border-slate-900 pb-8 mb-10 text-center md:text-left print:border-black">
+                        <h1 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight mb-2 text-black">MOHD SAYEED S MULLA</h1>
+                        <h2 className="font-manrope text-xl md:text-2xl font-semibold text-[#0058bc] print:text-[#0058bc] tracking-wide uppercase mb-4">Application / Flutter Developer</h2>
+                        <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 font-manrope text-sm font-medium text-slate-700 print:text-black">
+                            <span>mohdsayeed1092@gmail.com</span>
+                            <span>+91 7880661203</span>
+                            <span>github.com/Sayeed-M</span>
                             <span>Belagavi, India</span>
                         </div>
                     </header>
@@ -52,38 +53,50 @@ export default function ResumePage() {
                     {/* Content Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         
-                        {/* LEFT COLUMN: Experience & Education */}
+                        {/* LEFT COLUMN: Experience */}
                         <div className="md:col-span-2 space-y-12">
                             
                             {/* Experience Section */}
                             <section>
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-800 font-bold font-display">01</div>
-                                    <h3 className="font-display text-2xl font-bold uppercase tracking-widest text-slate-800">Experience</h3>
+                                    <div className="w-8 h-8 rounded-full bg-slate-100 print:bg-slate-200 flex items-center justify-center text-slate-800 print:text-black font-bold font-display">01</div>
+                                    <h3 className="font-display text-2xl font-bold uppercase tracking-widest text-slate-800 print:text-black">Experience</h3>
                                 </div>
                                 <div className="space-y-8">
                                     {/* Job 1 */}
                                     <div>
                                         <div className="flex flex-wrap justify-between items-baseline mb-2">
-                                            <h4 className="font-manrope text-lg font-bold text-slate-900">Avionics & Embedded Intern</h4>
+                                            <h4 className="font-manrope text-lg font-bold text-slate-900 print:text-black">Software Developer Intern</h4>
                                         </div>
-                                        <div className="font-manrope text-sm font-semibold text-[#0058bc] mb-4">Sarus Aerospace • Belagavi • Aug 2023 - Present</div>
-                                        <ul className="list-disc list-outside ml-4 space-y-2 font-manrope text-sm text-slate-600 leading-relaxed marker:text-[#0058bc]">
-                                            <li>Orchestrated deeply embedded flight algorithms standardizing vertical lift states within heavy-load custom VTOL applications.</li>
-                                            <li>Reverse-engineered hardware pin-layouts executing deep parameter tweaks directly onto open-flight controllers.</li>
-                                            <li>Developed centralized dashboard pipelines mapping live hardware telemetry straight into Next.js React-Fiber interfaces.</li>
+                                        <div className="font-manrope text-sm font-semibold text-[#0058bc] print:text-[#0058bc] mb-4">Sarus Aerospace • Belagavi • Feb 2026 - Present</div>
+                                        <ul className="list-disc list-outside ml-4 space-y-2 font-manrope text-sm text-slate-700 print:text-black leading-relaxed marker:text-[#0058bc]">
+                                            <li>Developing AI-driven aerospace software systems targeting autonomous operations.</li>
+                                            <li>Applying highly specialized Computer Vision & Automation techniques directly inside hardware integration layers.</li>
+                                            <li>Assisting in holistic system testing, debugging, and edge performance optimization.</li>
                                         </ul>
                                     </div>
                                     
-                                    {/* Job 2 (Example extension) */}
+                                    {/* Job 2 */}
                                     <div>
                                         <div className="flex flex-wrap justify-between items-baseline mb-2">
-                                            <h4 className="font-manrope text-lg font-bold text-slate-900">AI Computer Vision Lead</h4>
+                                            <h4 className="font-manrope text-lg font-bold text-slate-900 print:text-black">Senior Customer Support Engineer</h4>
                                         </div>
-                                        <div className="font-manrope text-sm font-semibold text-[#0058bc] mb-4">AeroVision Systems • Academic Prototype • Jan 2023 - Aug 2023</div>
-                                        <ul className="list-disc list-outside ml-4 space-y-2 font-manrope text-sm text-slate-600 leading-relaxed marker:text-[#0058bc]">
-                                            <li>Deployed headless YOLO iterations atop Nvidia Jetson edge chips ensuring cinematic target lock profiles.</li>
-                                            <li>Processed 60FPS feed logic natively resolving targeting discrepancies during atmospheric disturbances.</li>
+                                        <div className="font-manrope text-sm font-semibold text-[#0058bc] print:text-[#0058bc] mb-4">Verdeus Naturals • Belagavi • Sep 2024 - Jan 2025</div>
+                                        <ul className="list-disc list-outside ml-4 space-y-2 font-manrope text-sm text-slate-700 print:text-black leading-relaxed marker:text-[#0058bc]">
+                                            <li>Handled product deployment, system installation, and customer configurations providing on-site support across India.</li>
+                                            <li>Ensured pristine product launches and resolved high-priority crisis communications efficiently.</li>
+                                        </ul>
+                                    </div>
+
+                                    {/* Job 3 */}
+                                    <div>
+                                        <div className="flex flex-wrap justify-between items-baseline mb-2">
+                                            <h4 className="font-manrope text-lg font-bold text-slate-900 print:text-black">Full Stack Web Developer Intern</h4>
+                                        </div>
+                                        <div className="font-manrope text-sm font-semibold text-[#0058bc] print:text-[#0058bc] mb-4">Edureka Learning Center • Apr 2024 - May 2024</div>
+                                        <ul className="list-disc list-outside ml-4 space-y-2 font-manrope text-sm text-slate-700 print:text-black leading-relaxed marker:text-[#0058bc]">
+                                            <li>Built high-performance dynamic web applications executing robust frontend logic alongside complex underlying databases.</li>
+                                            <li>Mastered continuous delivery timelines across HTML, CSS, JavaScript, and internal backend technologies.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -94,56 +107,55 @@ export default function ResumePage() {
                         {/* RIGHT COLUMN: Skills & Education */}
                         <div className="md:col-span-1 space-y-12">
                             
-                            {/* Skills Section */}
+                            {/* Education Section */}
                             <section>
                                 <div className="flex items-center gap-4 mb-6">
-                                    <h3 className="font-display text-2xl font-bold uppercase tracking-widest text-slate-800">Skills</h3>
+                                    <h3 className="font-display text-2xl font-bold uppercase tracking-widest text-slate-800 print:text-black">Education</h3>
                                 </div>
                                 <div className="space-y-6">
                                     <div>
-                                        <h4 className="font-manrope text-xs font-bold uppercase text-slate-400 mb-2 tracking-widest">Hardware / Embedded</h4>
-                                        <div className="flex flex-col gap-1.5 font-manrope text-sm text-slate-700 font-semibold">
-                                            <span>PX4 / ArduPilot</span>
-                                            <span>ROS / ROS2</span>
-                                            <span>MAVLink</span>
-                                        </div>
+                                        <h4 className="font-manrope text-sm font-bold text-slate-900 print:text-black leading-tight">Master of Computer Applications (MCA)</h4>
+                                        <div className="font-manrope text-xs font-semibold text-[#0058bc] print:text-[#0058bc] mt-1 mb-2">Visvesvaraya Technological University (VTU)</div>
+                                        <p className="font-manrope text-xs text-slate-600 print:text-slate-800 font-medium">Dec 2024 – Present</p>
                                     </div>
                                     <div>
-                                        <h4 className="font-manrope text-xs font-bold uppercase text-slate-400 mb-2 tracking-widest">Languages</h4>
-                                        <div className="flex flex-col gap-1.5 font-manrope text-sm text-slate-700 font-semibold">
-                                            <span>Python & C++</span>
-                                            <span>TypeScript</span>
-                                            <span>Dart</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h4 className="font-manrope text-xs font-bold uppercase text-slate-400 mb-2 tracking-widest">Frameworks</h4>
-                                        <div className="flex flex-col gap-1.5 font-manrope text-sm text-slate-700 font-semibold">
-                                            <span>Next.js & React</span>
-                                            <span>Flutter</span>
-                                            <span>Three.js / WebGL</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h4 className="font-manrope text-xs font-bold uppercase text-slate-400 mb-2 tracking-widest">Design</h4>
-                                        <div className="flex flex-col gap-1.5 font-manrope text-sm text-slate-700 font-semibold">
-                                            <span>Figma</span>
-                                            <span>Tailwind CSS</span>
-                                            <span>Framer Motion</span>
-                                        </div>
+                                        <h4 className="font-manrope text-sm font-bold text-slate-900 print:text-black leading-tight">Bachelor of Computer Applications (BCA)</h4>
+                                        <div className="font-manrope text-xs font-semibold text-[#0058bc] print:text-[#0058bc] mt-1 mb-2">Rani Channamma University</div>
+                                        <p className="font-manrope text-xs text-slate-600 print:text-slate-800 font-medium">Sep 2021 – Sep 2024</p>
                                     </div>
                                 </div>
                             </section>
 
-                            {/* Education Section */}
+                            {/* Skills Section */}
                             <section>
                                 <div className="flex items-center gap-4 mb-6">
-                                    <h3 className="font-display text-2xl font-bold uppercase tracking-widest text-slate-800">Education</h3>
+                                    <h3 className="font-display text-2xl font-bold uppercase tracking-widest text-slate-800 print:text-black">Skills</h3>
                                 </div>
-                                <div>
-                                    <h4 className="font-manrope text-sm font-bold text-slate-900 leading-tight">B.E in Computer Science</h4>
-                                    <div className="font-manrope text-xs font-semibold text-[#0058bc] mt-1 mb-2">Visvesvaraya Technological University</div>
-                                    <p className="font-manrope text-xs text-slate-600 font-medium">Graduating 2026</p>
+                                <div className="space-y-5">
+                                    <div>
+                                        <h4 className="font-manrope text-xs font-bold uppercase text-slate-500 print:text-slate-700 mb-2 tracking-widest">Languages</h4>
+                                        <div className="flex flex-col gap-1.5 font-manrope text-sm text-slate-800 print:text-black font-semibold">
+                                            <span>Python & C++</span>
+                                            <span>Dart / Swift</span>
+                                            <span>Java / C#</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-manrope text-xs font-bold uppercase text-slate-500 print:text-slate-700 mb-2 tracking-widest">Technologies</h4>
+                                        <div className="flex flex-col gap-1.5 font-manrope text-sm text-slate-800 print:text-black font-semibold">
+                                            <span>Flutter App Dev</span>
+                                            <span>Next.js / React</span>
+                                            <span>Android & iOS Native</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-manrope text-xs font-bold uppercase text-slate-500 print:text-slate-700 mb-2 tracking-widest">Databases & IDEs</h4>
+                                        <div className="flex flex-col gap-1.5 font-manrope text-sm text-slate-800 print:text-black font-semibold">
+                                            <span>Oracle DBMS</span>
+                                            <span>VS Code / Visual Studio</span>
+                                            <span>Xcode / Android Studio</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </section>
                             

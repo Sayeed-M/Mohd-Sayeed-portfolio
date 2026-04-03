@@ -1,67 +1,132 @@
 "use client";
-import React from "react";
-import { Navbar } from "@/components/Navbar";
-import { GlassForm } from "@/components/GlassForm";
-import { motion } from "framer-motion";
-
-const SKILLS = [
-  "React Three Fiber", "Flight Dynamics", "Machine Learning", 
-  "Next.js App Router", "TensorFlow", "C++ System Level", 
-  "Framer Motion", "WebGL Performance"
-];
+import React, { useState } from 'react';
+import { Navbar } from '@/components/Navbar';
+import { motion } from 'framer-motion';
+import { MapPin, Phone, Mail, Link, Send } from 'lucide-react';
+import { GlassmorphismPanel } from '@/components/GlassmorphismPanel';
+import { MouseGlowBorder } from '@/components/MouseGlowBorder';
 
 export default function ContactPage() {
-   return (
-       <main className="min-h-screen bg-surface flex flex-col relative overflow-hidden">
-           <Navbar />
-           
-           {/* Abstract Background Decoration */}
-           <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
-           <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-tertiary/10 blur-[120px] rounded-full pointer-events-none" />
+    const [focusedField, setFocusedField] = useState<string | null>(null);
 
-           <div className="flex-1 flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto w-full px-6 gap-12 pt-32 pb-12 z-10">
-               
-               {/* Left side: Skills Visualization */}
-               <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                   <motion.h1 
-                       initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }}
-                       className="font-display text-5xl md:text-7xl font-bold tracking-tight text-on-surface mb-6 leading-tight"
-                   >
-                       Tech Stack & <br /> Data Relay.
-                   </motion.h1>
-                   <motion.p 
-                       initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}
-                       className="font-manrope text-lg text-on-surface-variant max-w-md mb-10 leading-relaxed"
-                   >
-                       A visualized matrix of active competencies fueling continuous architecture optimization. Reach out to sync nodes.
-                   </motion.p>
-                   
-                   <div className="flex flex-wrap gap-3">
-                       {SKILLS.map((skill, i) => (
-                           <motion.div
-                               key={skill}
-                               initial={{ opacity: 0, scale: 0.8 }}
-                               animate={{ opacity: 1, scale: 1 }}
-                               transition={{ delay: 0.3 + (i * 0.05), type: "spring", stiffness: 200, damping: 20 }}
-                               className="px-5 py-2.5 rounded-full border border-primary/20 bg-surface-container-lowest text-primary font-bold font-manrope text-sm shadow-[0_4px_15px_rgba(0,0,0,0.03)] hover:scale-105 transition-transform cursor-default"
-                           >
-                               {skill}
-                           </motion.div>
-                       ))}
-                   </div>
-               </div>
+    return (
+        <main className="min-h-screen bg-surface relative overflow-hidden flex flex-col">
+            <Navbar />
 
-               {/* Right side: Contact Form */}
-               <motion.div 
-                   initial={{ opacity: 0, y: 30 }}
-                   animate={{ opacity: 1, y: 0 }}
-                   transition={{ delay: 0.4 }}
-                   className="w-full lg:w-1/2"
-               >
-                   <GlassForm />
-               </motion.div>
+            {/* Dark mode background elements */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-surface to-surface pointer-events-none -z-10" />
 
-           </div>
-       </main>
-   );
+            <section className="flex-1 w-full pt-32 pb-20 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 item-center mt-8">
+                
+                {/* Left Side: Text and Contact Nodes */}
+                <div className="flex flex-col justify-center">
+                     <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6 }}
+                     >
+                        <h1 className="font-display text-5xl md:text-6xl font-black text-on-surface tracking-tight mb-4">
+                            Initialize <br className="hidden md:block"/> Connection.
+                        </h1>
+                        <p className="font-manrope text-lg text-on-surface-variant leading-relaxed max-w-md mb-12">
+                            Always prepared to discuss innovative systems, robust aerospace UI abstractions, or highly optimized mobile pipelines.
+                        </p>
+                    </motion.div>
+
+                    <div className="flex flex-col gap-6">
+                        <ContactNode icon={<MapPin className="text-primary" />} title="Location" val="Belagavi, Karnataka, India" delay={0.2} />
+                        <ContactNode icon={<Phone className="text-primary" />} title="Direct Line" val="+91 7880661203" delay={0.3} href="tel:+917880661203" />
+                        <ContactNode icon={<Mail className="text-primary" />} title="Email Transmission" val="mohdsayeed1092@gmail.com" delay={0.4} href="mailto:mohdsayeed1092@gmail.com" />
+                        <ContactNode icon={<Link className="text-primary" />} title="Repository Source" val="github.com/Sayeed-M" delay={0.5} href="https://github.com/Sayeed-M" />
+                    </div>
+                </div>
+
+                {/* Right Side: Interactive Glass Form */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="flex justify-center items-center w-full"
+                >
+                    <MouseGlowBorder className="w-full max-w-md rounded-3xl">
+                        <GlassmorphismPanel containerType="highest" className="p-8 w-full rounded-3xl bg-white/40 dark:bg-black/40 border border-white/40 dark:border-white/10 backdrop-blur-2xl shadow-atmospheric relative overflow-hidden">
+                            <h3 className="font-display text-2xl font-bold text-on-surface mb-8">System Access Portal</h3>
+                            
+                            <form className="flex flex-col gap-5 relative z-10" onSubmit={(e) => e.preventDefault()}>
+                                {/* Interactive Input Block */}
+                                <div className="relative group">
+                                    <input 
+                                        type="text" 
+                                        onFocus={() => setFocusedField('name')} 
+                                        onBlur={() => setFocusedField(null)}
+                                        className="w-full bg-surface-container-low/50 dark:bg-black/50 border border-outline-variant/30 rounded-xl px-4 pt-6 pb-2 text-on-surface font-manrope font-medium focus:outline-none focus:border-primary/60 transition-all peer" 
+                                        placeholder=" "
+                                    />
+                                    <label className="absolute left-4 top-4 text-on-surface-variant text-sm font-manrope transition-all peer-focus:-translate-y-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-translate-y-2.5 peer-[:not(:placeholder-shown)]:text-xs">Ident</label>
+                                    {focusedField === 'name' && <motion.div layoutId="glow" className="absolute -inset-[1px] rounded-xl border border-primary/50 shadow-[0_0_15px_var(--color-primary)] pointer-events-none" />}
+                                </div>
+
+                                <div className="relative group">
+                                    <input 
+                                        type="email" 
+                                        onFocus={() => setFocusedField('email')} 
+                                        onBlur={() => setFocusedField(null)}
+                                        className="w-full bg-surface-container-low/50 dark:bg-black/50 border border-outline-variant/30 rounded-xl px-4 pt-6 pb-2 text-on-surface font-manrope font-medium focus:outline-none focus:border-primary/60 transition-all peer" 
+                                        placeholder=" "
+                                    />
+                                    <label className="absolute left-4 top-4 text-on-surface-variant text-sm font-manrope transition-all peer-focus:-translate-y-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-translate-y-2.5 peer-[:not(:placeholder-shown)]:text-xs">Comms Frequency (Email)</label>
+                                    {focusedField === 'email' && <motion.div layoutId="glow" className="absolute -inset-[1px] rounded-xl border border-primary/50 shadow-[0_0_15px_var(--color-primary)] pointer-events-none" />}
+                                </div>
+
+                                <div className="relative group">
+                                    <textarea 
+                                        rows={4}
+                                        onFocus={() => setFocusedField('msg')} 
+                                        onBlur={() => setFocusedField(null)}
+                                        className="w-full bg-surface-container-low/50 dark:bg-black/50 border border-outline-variant/30 rounded-xl px-4 pt-6 pb-2 text-on-surface font-manrope font-medium focus:outline-none focus:border-primary/60 transition-all peer resize-none" 
+                                        placeholder=" "
+                                    />
+                                    <label className="absolute left-4 top-4 text-on-surface-variant text-sm font-manrope transition-all peer-focus:-translate-y-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-translate-y-2.5 peer-[:not(:placeholder-shown)]:text-xs">Payload (Message)</label>
+                                    {focusedField === 'msg' && <motion.div layoutId="glow" className="absolute -inset-[1px] rounded-xl border border-primary/50 shadow-[0_0_15px_var(--color-primary)] pointer-events-none" />}
+                                </div>
+
+                                <motion.button 
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="mt-4 flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-primary to-primary-container rounded-xl text-white font-manrope font-bold text-sm shadow-[0_5px_20px_rgba(0,88,188,0.3)] hover:shadow-[0_8px_30px_rgba(0,88,188,0.5)] transition-all"
+                                >
+                                    Transmit Data <Send size={16} />
+                                </motion.button>
+                            </form>
+                        </GlassmorphismPanel>
+                    </MouseGlowBorder>
+                </motion.div>
+            </section>
+        </main>
+    )
+}
+
+function ContactNode({ icon, title, val, delay, href }: { icon: React.ReactNode, title: string, val: string, delay: number, href?: string }) {
+    const Component = href ? 'a' : 'div';
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay, duration: 0.5 }}
+        >
+            <Component 
+                href={href} 
+                target={href?.startsWith("http") ? "_blank" : undefined}
+                className="flex items-center gap-6 p-4 rounded-2xl bg-surface-container-low/50 border border-outline-variant/20 hover:bg-surface-container-high/50 hover:border-primary/30 transition-all shadow-sm max-w-sm group cursor-pointer"
+            >
+                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    {icon}
+                </div>
+                <div>
+                    <p className="font-manrope text-[11px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">{title}</p>
+                    <p className="font-manrope text-sm font-bold text-on-surface">{val}</p>
+                </div>
+            </Component>
+        </motion.div>
+    );
 }

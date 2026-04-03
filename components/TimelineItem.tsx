@@ -8,12 +8,12 @@ export interface TimelineItemProps {
   title: string;
   company: string;
   date: string;
-  description: string;
+  children?: React.ReactNode;
   index: number;
   isLeft?: boolean;
 }
 
-export function TimelineItem({ title, company, date, description, index, isLeft }: TimelineItemProps) {
+export function TimelineItem({ title, company, date, children, index, isLeft }: TimelineItemProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -58,9 +58,9 @@ export function TimelineItem({ title, company, date, description, index, isLeft 
                         <span className="inline-block text-primary font-bold text-sm mb-3 tracking-widest uppercase bg-primary/10 px-3 py-1 rounded-full">{date}</span>
                         <h3 className="font-display font-bold text-2xl text-on-surface tracking-tight mb-2">{title}</h3>
                         <h4 className="font-manrope font-bold text-on-surface-variant mb-4">{company}</h4>
-                        <p className="font-manrope text-sm text-on-surface-variant leading-relaxed opacity-90 max-w-[90%]">
-                            {description}
-                        </p>
+                        <div className="font-manrope text-sm opacity-90 max-w-[90%]">
+                            {children}
+                        </div>
                     </GlassmorphismPanel>
                 </MouseGlowBorder>
             </div>

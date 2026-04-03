@@ -1,67 +1,68 @@
-import React from "react";
-import { Timeline } from "@/components/Timeline";
-import { TimelineItem } from "@/components/TimelineItem";
-
-export const metadata = {
-  title: "Experience - AeroGlass Portfolio",
-  description: "Career trajectory, aerospace internships, and flight testing.",
-};
-
-const EXPERIENCE_DATA = [
-  {
-    title: "Aerospace Engineering Intern",
-    company: "Sarus Aerospace (Belagavi)",
-    date: "2023 - Present",
-    description:
-      "Assisted in the design and structural analysis of high-endurance UAV frames utilizing modern CAD tools. Orchestrated field testing paradigms for VTOL transitional flight stability, and evaluated telemetry transmission hardware.",
-    isLeft: true,
-  },
-  {
-    title: "Heavy Lift System Architecture",
-    company: "Academic Project Core",
-    date: "Late 2023",
-    description:
-      "Drafted composite aerodynamics profiles and assembled conceptual payload carriage mounts for an autonomous hexacopter setup optimized for agricultural and industrial survey applications.",
-    isLeft: false,
-  },
-  {
-    title: "Flight Dynamics R&D",
-    company: "Independent Research",
-    date: "Early 2023",
-    description:
-      "Contributed configuration logic to open-source PX4 Autopilot parameter files enabling refined PID tuning across non-standard quadplane frames during hovering transition states.",
-    isLeft: true,
-  },
-];
+"use client";
+import React from 'react';
+import { Navbar } from '@/components/Navbar';
+import { Timeline } from '@/components/Timeline';
+import { TimelineItem } from '@/components/TimelineItem';
+import { motion } from 'framer-motion';
 
 export default function ExperiencePage() {
   return (
-    <main className="min-h-screen pt-32 pb-24 px-6 md:px-12 lg:px-24 overflow-x-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
-          <h1 className="font-display font-bold text-4xl md:text-5xl text-on-surface mb-6">
-            Flight Trajectory
-          </h1>
-          <p className="font-manrope text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
-            A chronological timeline of my internships, milestones, and
-            projects executed within structured aerospace and tech environments.
-          </p>
-        </div>
+    <main className="min-h-screen bg-surface relative">
+      <Navbar />
+      
+       {/* Background ambient lighting */}
+       <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-b from-primary/5 via-transparent to-tertiary/5 mix-blend-multiply dark:mix-blend-lighten pointer-events-none -z-10" />
 
-        <Timeline>
-          {EXPERIENCE_DATA.map((item, index) => (
-            <TimelineItem
-              key={index}
-              index={index}
-              title={item.title}
-              company={item.company}
-              date={item.date}
-              description={item.description}
-              isLeft={item.isLeft}
-            />
-          ))}
-        </Timeline>
-      </div>
+      <section className="pt-40 pb-20 px-6 max-w-7xl mx-auto relative z-10">
+        <motion.div 
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           className="text-center max-w-2xl mx-auto mb-20"
+        >
+          <h1 className="font-display text-5xl md:text-6xl font-black tracking-tight text-on-surface mb-6">Career Trajectory.</h1>
+          <p className="font-manrope text-lg text-on-surface-variant leading-relaxed">
+            A chronological mapping of my professional internships, full-stack deployments, and engineering milestones.
+          </p>
+        </motion.div>
+
+        {/* Timeline Component wrapper */}
+        <div className="max-w-4xl mx-auto pl-4 md:pl-0">
+          <Timeline>
+            
+            <TimelineItem title="Software Developer Intern" date="Feb 2026 – Present" company="Sarus Aerospace Pvt. Ltd. • Belagavi" index={0} isLeft={true}>
+              <ul className="list-disc list-outside ml-5 space-y-2 text-on-surface-variant font-manrope leading-relaxed">
+                <li>Developing AI-driven aerospace software systems targeting autonomous intelligence.</li>
+                <li>Applying Computer Vision & Automation techniques directly inside hardware integration layers.</li>
+                <li>Assisting in holistic system testing, debugging, and edge performance optimization.</li>
+              </ul>
+            </TimelineItem>
+
+            <TimelineItem title="Senior Customer Support Engineer" date="Sep 2024 – Jan 2025" company="Verdeus Naturals Pvt. Ltd. • Belagavi" index={1} isLeft={false}>
+               <ul className="list-disc list-outside ml-5 space-y-2 text-on-surface-variant font-manrope leading-relaxed">
+                <li>Handled nationwide product deployment, system installation, and customer configuration on-site.</li>
+                <li>Resolved edge-case hardware/software integration issues ensuring pristine product launches.</li>
+                <li>Fostered strong crisis communication protocols and frontline problem-solving strategies.</li>
+              </ul>
+            </TimelineItem>
+
+            <TimelineItem title="Full Stack Web Developer Intern" date="Apr 2024 – May 2024" company="Edureka Learning Center • Belagavi" index={2} isLeft={true}>
+               <ul className="list-disc list-outside ml-5 space-y-2 text-on-surface-variant font-manrope leading-relaxed">
+                <li>Built dynamic, high-performance web applications executing raw application logic over JavaScript.</li>
+                <li>Mapped database schemas to complex frontend UI arrays ensuring timeline delivery targets.</li>
+                <li>Simultaneously completed the highly rigorous <b>React.js Developer Training Program</b>, mastering components and state management.</li>
+              </ul>
+            </TimelineItem>
+
+             <TimelineItem title="Android Developer Intern" date="Sep 2023 – Oct 2023" company="Topperworld • Remote" index={3} isLeft={false}>
+               <ul className="list-disc list-outside ml-5 space-y-2 text-on-surface-variant font-manrope leading-relaxed">
+                <li>Collaborated across agile sprints to develop native Android application UI designs and underlying logic workflows.</li>
+                <li>Handled intensive testing cycles and debugging iterations to deliver reliable builds.</li>
+              </ul>
+            </TimelineItem>
+
+          </Timeline>
+        </div>
+      </section>
     </main>
   );
 }

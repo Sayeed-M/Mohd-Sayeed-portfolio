@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Navbar() {
   return (
@@ -18,7 +19,9 @@ export function Navbar() {
          <Link href="/ai" className="hover:text-primary transition-colors">AI Core</Link>
          <Link href="/resume" className="hover:text-primary transition-colors">Resume</Link>
       </div>
+
       <div className="flex items-center gap-4">
+          <ThemeToggle />
           <Link href="/admin/login" className="px-5 py-2.5 rounded-full bg-primary/10 text-primary text-sm font-bold hover:bg-primary shadow-sm hover:text-white transition-all">
              Admin Login
           </Link>
