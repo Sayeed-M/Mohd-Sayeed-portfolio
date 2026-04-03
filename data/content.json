@@ -1,0 +1,46 @@
+{
+  "skills": [
+    {
+      "id": "sk_1",
+      "category": "Drone Systems",
+      "items": [
+        { "name": "PX4 / ArduPilot", "level": 90 },
+        { "name": "ROS / ROS2", "level": 85 },
+        { "name": "MAVLink", "level": 80 }
+      ]
+    },
+    {
+      "id": "sk_2",
+      "category": "Application Development",
+      "items": [
+        { "name": "Flutter", "level": 95 },
+        { "name": "Android", "level": 85 },
+        { "name": "iOS / Swift", "level": 75 }
+      ]
+    },
+    {
+      "id": "sk_3",
+      "category": "AI & Computer Vision",
+      "items": [
+        { "name": "Machine Learning", "level": 85 },
+        { "name": "Python", "level": 90 },
+        { "name": "OpenAI API", "level": 80 }
+      ]
+    },
+    {
+      "id": "sk_4",
+      "category": "Web Development",
+      "items": [
+        { "name": "React / Next.js", "level": 90 },
+        { "name": "TypeScript", "level": 85 },
+        { "name": "HTML / CSS", "level": 80 }
+      ]
+    }
+  ],
+  "programming": ["C", "C#", "Java", "Swift", "Python", "Dart"],
+  "tools": ["Oracle DBMS", "VS Code", "Visual Studio", "Xcode", "Android Studio"],
+  "coreSkills": ["Problem Solving", "Communication", "Team Collaboration", "Debugging & Testing"],
+  "projects": [],
+  "experience": [],
+  "research": []
+}

@@ -82,7 +82,7 @@ export function SkillCard({
     >
       <m.div
         whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(0,0,0,0.15)" }}
-        className="h-full rounded-2xl shadow-lg border border-white/30 bg-white/40 backdrop-blur-lg"
+        className="h-full rounded-2xl shadow-lg border border-white/30 dark:border-white/10 bg-white/40 dark:bg-black/40 backdrop-blur-lg"
         transition={{ type: "spring", stiffness: 400, damping: 30 } as any}
         style={{ transformStyle: "preserve-3d" }}
       >
@@ -91,9 +91,9 @@ export function SkillCard({
            style={{ transform: "translateZ(40px)" }} // 3D Pop Out Effect
         >
           {/* Subtle noise or gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/60 dark:from-white/5 to-transparent pointer-events-none" />
           
-          <h3 className="font-display font-bold text-2xl text-slate-800 mb-8 tracking-tight border-b border-black/5 pb-4 relative z-10 drop-shadow-sm">
+          <h3 className="font-display font-bold text-2xl text-slate-800 dark:text-white mb-8 tracking-tight border-b border-black/5 dark:border-white/10 pb-4 relative z-10 drop-shadow-sm">
             {category}
           </h3>
           <m.div 

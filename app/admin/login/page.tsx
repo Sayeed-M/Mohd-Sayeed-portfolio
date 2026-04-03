@@ -3,13 +3,25 @@
 import React, { useState } from "react";
 import { m } from 'framer-motion';
 import { Lock, Eye, EyeOff, ShieldCheck } from "lucide-react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function AdminLoginPage() {
+  const router = useRouter();
   const [showPass, setShowPass] = useState(false);
   const [email, setEmail] = useState("Mohd Sayeed DEV");
   const [password, setPassword] = useState("788Sayeed15");
   const [focusedField, setFocusedField] = useState<string | null>(null);
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email === "Mohd Sayeed DEV" && password === "788Sayeed15") {
+      localStorage.setItem("isAdmin", "true");
+      router.push("/admin/dashboard");
+    } else {
+      alert("Invalid Auth Key or Commander ID");
+    }
+  };
 
   const inputBase =
     "w-full bg-surface-container-low/60 border border-outline-variant/20 text-on-surface placeholder-on-surface-variant/60 rounded-xl px-4 py-3.5 outline-none font-manrope text-sm transition-all duration-300 focus:bg-white focus:border-primary/40 focus:shadow-[0_0_0_3px_rgba(0,88,188,0.08)]";
@@ -17,8 +29,8 @@ export default function AdminLoginPage() {
   return (
     <main className="min-h-screen bg-surface flex items-center justify-center relative overflow-hidden">
       {/* Background glows */}
-      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-primary/8 blur-[100px] rounded-full pointer-events-none" />
-      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-tertiary/8 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-primary/8 dark:bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-tertiary/8 dark:bg-tertiary/5 blur-[100px] rounded-full pointer-events-none" />
 
       <m.div
         initial={{ opacity: 0, y: 30 }}
@@ -27,7 +39,7 @@ export default function AdminLoginPage() {
         className="relative z-10 w-full max-w-md mx-6"
       >
         {/* Glass Card */}
-        <div className="bg-white/60 backdrop-blur-2xl rounded-3xl border border-outline-variant/20 shadow-[0_30px_80px_rgba(20,27,43,0.1)] p-10">
+        <div className="bg-white/60 dark:bg-black/60 backdrop-blur-2xl rounded-3xl border border-outline-variant/20 shadow-[0_30px_80px_rgba(20,27,43,0.1)] p-10">
           {/* Logo / Brand */}
           <div className="flex items-center gap-3 mb-10">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-tertiary flex items-center justify-center">
@@ -44,7 +56,7 @@ export default function AdminLoginPage() {
           </div>
 
           <form
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleLogin}
             className="space-y-5"
             noValidate
           >

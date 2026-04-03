@@ -47,8 +47,8 @@ export function SkillRing({
             cy="55"
             r={radius}
             fill="transparent"
-            stroke="rgba(0, 88, 188, 0.08)"
             strokeWidth="7"
+            className="stroke-primary/10 dark:stroke-white/10"
           />
           {/* Animated Progress Ring */}
           <m.circle
@@ -80,7 +80,7 @@ export function SkillRing({
         </m.div>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-          <span className="font-display font-bold text-lg text-slate-800">
+          <span className="font-display font-bold text-lg text-slate-800 dark:text-white">
             {isInView ? (
               <m.span
                 initial={{ opacity: 0, y: 5 }}
@@ -93,7 +93,7 @@ export function SkillRing({
           </span>
         </div>
       </m.div>
-      <div className="mt-5 font-manrope text-[13px] font-bold text-slate-600 text-center max-w-[100px] leading-snug group-hover:text-primary transition-colors duration-300">
+      <div className="mt-5 font-manrope text-[13px] font-bold text-slate-600 dark:text-slate-300 text-center max-w-[100px] leading-snug group-hover:text-primary transition-colors duration-300">
         {label}
       </div>
     </m.div>
