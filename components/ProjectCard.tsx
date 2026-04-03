@@ -49,7 +49,7 @@ export function ProjectCard({ data, index = 0 }: { data: ProjectData; index?: nu
                        
                        {/* Tags */}
                        <div className="flex flex-wrap gap-2 mb-6 pointer-events-none mt-auto">
-                           {data.tags.map(tag => (
+                           {(data.tags || []).map((tag: string) => (
                                <span key={tag} className="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-bold uppercase tracking-wider font-manrope">
                                    {tag}
                                </span>

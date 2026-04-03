@@ -94,8 +94,105 @@
     "Team Collaboration",
     "Debugging & Testing"
   ],
-  "projects": [],
-  "experience": [],
+  "projects": [
+    {
+      "id": "proj_1",
+      "title": "OpenAI App (Flutter & Android)",
+      "description": "Cross-platform mobile application integrating OpenAI APIs."
+    },
+    {
+      "id": "proj_2",
+      "title": "To-Do Task App",
+      "description": "Task management productivity application."
+    },
+    {
+      "id": "proj_3",
+      "title": " Rock Paper Scissors Game",
+      "description": "Interactive mobile game with state management logic."
+    },
+    {
+      "id": "proj_4",
+      "title": "Tic Tac Toe",
+      "description": "Classic logic game with dynamic UI mapping."
+    },
+    {
+      "id": "proj_5",
+      "title": "Flappy Bird Game",
+      "description": "Physics-based 2D side-scrolling mobile game clone."
+    },
+    {
+      "id": "proj_6",
+      "title": " Mindful Meal Timer",
+      "description": "Health and wellness pacing application."
+    },
+    {
+      "id": "proj_7",
+      "title": " Gemini AI Chat App",
+      "description": "Advanced conversational assistant powered by Google Gemini."
+    },
+    {
+      "id": "proj_8",
+      "title": " Cloud View Service",
+      "description": "Weather and atmospheric data retrieval application."
+    },
+    {
+      "id": "proj_9",
+      "title": " iOS Projects",
+      "description": "Various internal and test applications built with Swift for iOS."
+    },
+    {
+      "id": "proj_10",
+      "title": " Dicee App",
+      "description": "Randomized number generation and state manipulation."
+    },
+    {
+      "id": "proj_11",
+      "title": "Xylophone App",
+      "description": "Audio playback and interactive sound mapping application."
+    },
+    {
+      "id": "proj_12",
+      "title": " Egg Timer",
+      "description": "Precision countdown interface application."
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp_1",
+      "title": "Software Developer Intern",
+      "subtitle": "Sarus Aerospace Pvt. Ltd. • Belagavi",
+      "date": "Feb 2026 – Present",
+      "description": "Developing AI-driven aerospace software systems\nWorking on autonomous and intelligent applications\nApplying Computer Vision & Automation techniques\nAssisting in system integration, testing, and debugging\nOptimizing system performance\nGaining real-world exposure to aerospace engineering systems"
+    },
+    {
+      "id": "exp_2",
+      "title": "Senior Customer Support Engineer",
+      "subtitle": "Verdeus Naturals Pvt. Ltd. • Belagavi",
+      "date": "Sep 2024 – Jan 2025",
+      "description": "Handled product deployment and customer support\nPerformed installation, configuration, and data entry\nProvided on-site support across India\nEnsured smooth product launches\nResolved customer issues efficiently\nDeveloped strong communication & problem-solving skills"
+    },
+    {
+      "id": "exp_3",
+      "title": "Full Stack Web Developer Intern",
+      "subtitle": "Edureka Learning Center • Belagavi",
+      "date": "Apr 2024 – May 2024",
+      "description": "Built full-stack web applications\nWorked with HTML, CSS, JavaScript & backend technologies\nDesigned UI and implemented application logic\nIntegrated databases\nPerformed debugging, testing, and deployment\nDelivered project within timeline"
+    },
+    {
+      "id": "exp_4",
+      "title": "React.js Developer (Training Program)",
+      "subtitle": "Edureka Learning Center",
+      "date": "Apr 2024 – May 2024",
+      "description": "Developed responsive UI using React.js\nWorked with components and state management\nUsed modern JavaScript for efficient frontend development"
+    },
+    {
+      "id": "exp_5",
+      "title": "Android Developer Intern",
+      "subtitle": "Topperworld • Remote",
+      "date": "Sep 2023 – Oct 2023",
+      "description": "Developed Android applications\nWorked on UI design and app logic\nDebugged and tested applications\nCollaborated on assigned tasks\nDelivered projects successfully"
+    }
+  ],
   "research": [],
   "demos": [],
   "resume": [],
