@@ -5,7 +5,7 @@ import { LazyMotion, domAnimation } from 'framer-motion';
 
 export function Providers({ children }: { children: React.ReactNode }) {
     return (
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
             <LazyMotion features={domAnimation} strict>
                 {children}
             </LazyMotion>
