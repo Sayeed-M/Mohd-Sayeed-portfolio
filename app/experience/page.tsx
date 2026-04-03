@@ -1,11 +1,27 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { Timeline } from '@/components/Timeline';
 import { TimelineItem } from '@/components/TimelineItem';
 import { m } from 'framer-motion';
 
 export default function ExperiencePage() {
+  const [experience, setExperience] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+      fetch("/api/content")
+        .then(res => res.json())
+        .then(d => {
+           setExperience(d.experience || []);
+           setIsLoading(false);
+        })
+        .catch(e => {
+           console.error(e);
+           setIsLoading(false);
+        });
+  }, []);
+
   return (
     <main className="min-h-screen bg-surface relative">
       <Navbar />
@@ -27,40 +43,32 @@ export default function ExperiencePage() {
 
         {/* Timeline Component wrapper */}
         <div className="max-w-4xl mx-auto pl-4 md:pl-0">
-          <Timeline>
-            
-            <TimelineItem title="Software Developer Intern" date="Feb 2026 – Present" company="Sarus Aerospace Pvt. Ltd. • Belagavi" index={0} isLeft={true}>
-              <ul className="list-disc list-outside ml-5 space-y-2 text-on-surface-variant font-manrope leading-relaxed">
-                <li>Developing AI-driven aerospace software systems targeting autonomous intelligence.</li>
-                <li>Applying Computer Vision & Automation techniques directly inside hardware integration layers.</li>
-                <li>Assisting in holistic system testing, debugging, and edge performance optimization.</li>
-              </ul>
-            </TimelineItem>
-
-            <TimelineItem title="Senior Customer Support Engineer" date="Sep 2024 – Jan 2025" company="Verdeus Naturals Pvt. Ltd. • Belagavi" index={1} isLeft={false}>
-               <ul className="list-disc list-outside ml-5 space-y-2 text-on-surface-variant font-manrope leading-relaxed">
-                <li>Handled nationwide product deployment, system installation, and customer configuration on-site.</li>
-                <li>Resolved edge-case hardware/software integration issues ensuring pristine product launches.</li>
-                <li>Fostered strong crisis communication protocols and frontline problem-solving strategies.</li>
-              </ul>
-            </TimelineItem>
-
-            <TimelineItem title="Full Stack Web Developer Intern" date="Apr 2024 – May 2024" company="Edureka Learning Center • Belagavi" index={2} isLeft={true}>
-               <ul className="list-disc list-outside ml-5 space-y-2 text-on-surface-variant font-manrope leading-relaxed">
-                <li>Built dynamic, high-performance web applications executing raw application logic over JavaScript.</li>
-                <li>Mapped database schemas to complex frontend UI arrays ensuring timeline delivery targets.</li>
-                <li>Simultaneously completed the highly rigorous <b>React.js Developer Training Program</b>, mastering components and state management.</li>
-              </ul>
-            </TimelineItem>
-
-             <TimelineItem title="Android Developer Intern" date="Sep 2023 – Oct 2023" company="Topperworld • Remote" index={3} isLeft={false}>
-               <ul className="list-disc list-outside ml-5 space-y-2 text-on-surface-variant font-manrope leading-relaxed">
-                <li>Collaborated across agile sprints to develop native Android application UI designs and underlying logic workflows.</li>
-                <li>Handled intensive testing cycles and debugging iterations to deliver reliable builds.</li>
-              </ul>
-            </TimelineItem>
-
-          </Timeline>
+           {isLoading ? (
+                <div className="flex justify-center items-center py-20 min-h-[200px]">
+                    <div className="w-8 h-8 rounded-full border-4 border-primary border-t-transparent animate-spin" />
+                </div>
+            ) : experience.length === 0 ? (
+                <div className="text-center py-20 border-2 border-dashed border-outline-variant/30 rounded-2xl">
+                    <p className="font-manrope text-on-surface-variant">No experience records available. Add them through the Admin Dashboard.</p>
+                </div>
+            ) : (
+              <Timeline>
+                {experience.map((exp: any, i: number) => (
+                  <TimelineItem 
+                    key={exp.id || i}
+                    title={exp.title} 
+                    date={exp.date || exp.role} 
+                    company={exp.company || exp.subtitle} 
+                    index={i} 
+                    isLeft={i % 2 === 0}
+                  >
+                    <div className="text-on-surface-variant font-manrope leading-relaxed whitespace-pre-line">
+                      {exp.description || exp.content}
+                    </div>
+                  </TimelineItem>
+                ))}
+              </Timeline>
+            )}
         </div>
       </section>
     </main>
