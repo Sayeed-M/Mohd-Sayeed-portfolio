@@ -85,20 +85,20 @@ export function ChatUI() {
         style={{ transformStyle: "preserve-3d" }}
       >
         <MouseGlowBorder className="h-full rounded-3xl">
-          <GlassmorphismPanel containerType="low" className="p-0 h-full flex flex-col rounded-3xl overflow-hidden bg-white/40 backdrop-blur-2xl border-white/40 shadow-[0_30px_60px_rgba(0,0,0,0.08)]">
+          <GlassmorphismPanel containerType="low" className="p-0 h-full flex flex-col rounded-3xl overflow-hidden bg-white/40 dark:bg-[#1a1a1a]/80 backdrop-blur-2xl border-white/40 dark:border-white/5 shadow-[0_30px_60px_rgba(0,0,0,0.08)]">
             
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-white/20 bg-white/30 backdrop-blur-md">
+            <div className="flex items-center justify-between p-6 border-b border-white/20 dark:border-white/5 bg-white/30 dark:bg-black/30 backdrop-blur-md">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#0058bc] to-[#00c6ff] flex items-center justify-center shadow-md relative overflow-hidden">
                    <div className="absolute inset-0 bg-white/20 animate-pulse" />
                    <Bot size={24} className="text-white relative z-10" />
                 </div>
                 <div>
-                  <h2 className="font-display font-bold text-xl text-slate-800 tracking-tight">MOHD SAYEED S MULLA AI Core</h2>
+                  <h2 className="font-display font-bold text-xl text-slate-800 dark:text-white tracking-tight">MOHD SAYEED S MULLA AI Core</h2>
                   <div className="flex items-center gap-2 mt-1">
                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_#22c55e]" />
-                    <span className="font-manrope text-xs font-semibold text-slate-500 uppercase tracking-wider">System Online</span>
+                    <span className="font-manrope text-xs font-semibold text-slate-500 dark:text-gray-400 uppercase tracking-wider">System Online</span>
                   </div>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export function ChatUI() {
                       className={`max-w-[85%] md:max-w-[70%] px-5 py-4 rounded-2xl text-[15px] font-manrope leading-relaxed shadow-sm ${
                         msg.role === "user"
                           ? "bg-gradient-to-br from-[#0058bc] to-[#0070eb] text-white rounded-br-sm shadow-[0_10px_20px_rgba(0,88,188,0.2)]"
-                          : "bg-white/80 text-slate-700 border border-white/50 rounded-bl-sm backdrop-blur-md"
+                          : "bg-white/80 dark:bg-slate-800 text-slate-700 dark:text-gray-200 border border-white/50 dark:border-slate-700 rounded-bl-sm backdrop-blur-md"
                       }`}
                     >
                       {msg.parts}
@@ -134,9 +134,9 @@ export function ChatUI() {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex justify-start"
                 >
-                  <div className="bg-white/80 border border-white/50 backdrop-blur-md rounded-2xl rounded-bl-sm px-6 py-4 flex items-center gap-3 shadow-sm">
-                    <Loader2 size={18} className="animate-spin text-[#0058bc]" />
-                    <span className="text-sm text-slate-500 font-manrope font-medium">Synthesizing response...</span>
+                  <div className="bg-white/80 dark:bg-slate-800 border border-white/50 dark:border-slate-700 backdrop-blur-md rounded-2xl rounded-bl-sm px-6 py-4 flex items-center gap-3 shadow-sm">
+                    <Loader2 size={18} className="animate-spin text-[#0058bc] dark:text-[#4da6ff]" />
+                    <span className="text-sm text-slate-500 dark:text-gray-400 font-manrope font-medium">Synthesizing response...</span>
                   </div>
                 </m.div>
               )}
@@ -144,7 +144,7 @@ export function ChatUI() {
             </div>
 
             {/* Input Area */}
-            <div className="p-6 bg-white/30 backdrop-blur-lg border-t border-white/20">
+            <div className="p-6 bg-white/30 dark:bg-black/30 backdrop-blur-lg border-t border-white/20 dark:border-white/5">
               {/* Suggestions */}
               {messages.length === 1 && (
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -155,7 +155,7 @@ export function ChatUI() {
                       whileTap={{ scale: 0.95 }}
                       onClick={() => sendMessage(sug)}
                       disabled={isLoading}
-                      className="px-4 py-2 rounded-full bg-white/50 hover:bg-white/80 border border-white/40 text-xs font-manrope font-semibold text-[#0058bc] transition-colors shadow-sm flex items-center gap-2 disabled:opacity-50"
+                      className="px-4 py-2 rounded-full bg-white/50 dark:bg-slate-800 hover:bg-white/80 dark:hover:bg-slate-700 border border-white/40 dark:border-slate-700 text-xs font-manrope font-semibold text-[#0058bc] dark:text-[#4da6ff] transition-colors shadow-sm flex items-center gap-2 disabled:opacity-50"
                     >
                       <Sparkles size={12} />
                       {sug}
@@ -164,7 +164,7 @@ export function ChatUI() {
                 </div>
               )}
 
-              <div className="flex items-center gap-3 bg-white/60 rounded-2xl border border-white/50 p-2 shadow-inner focus-within:ring-2 focus-within:ring-[#0058bc]/20 transition-all">
+              <div className="flex items-center gap-3 bg-white/60 dark:bg-[#1a1a1a] rounded-2xl border border-white/50 dark:border-white/10 p-2 shadow-inner focus-within:ring-2 focus-within:ring-[#0058bc]/20 transition-all">
                 <input
                   type="text"
                   value={input}
@@ -172,7 +172,7 @@ export function ChatUI() {
                   onKeyDown={handleKeyDown}
                   placeholder="Commence query transmission..."
                   disabled={isLoading}
-                  className="flex-1 bg-transparent px-4 py-2 text-base font-manrope text-slate-800 placeholder-slate-400 outline-none"
+                  className="flex-1 bg-transparent px-4 py-2 text-base font-manrope text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-gray-500 outline-none"
                 />
                 <m.button
                   onClick={() => sendMessage()}

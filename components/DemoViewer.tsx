@@ -44,7 +44,7 @@ export function DemoViewer({ title, description, techStack, folder, frameCount, 
             {/* Viewer Panel */}
             <div className="w-full lg:w-2/3 h-[400px] lg:h-full group">
                 <MouseGlowBorder className="h-full rounded-3xl">
-                    <GlassmorphismPanel containerType="low" className="p-2 h-full flex items-center justify-center relative overflow-hidden rounded-3xl bg-white/40 backdrop-blur-xl border border-white/40 shadow-lg">
+                    <GlassmorphismPanel containerType="low" className="p-2 h-full flex items-center justify-center relative overflow-hidden rounded-3xl bg-white/40 dark:bg-[#1a1a1a]/80 backdrop-blur-xl border border-white/40 dark:border-white/5 shadow-lg">
                         
                         {/* Simulation / Visual Embed */}
                         <div className="absolute inset-4 rounded-2xl overflow-hidden bg-slate-900 shadow-inner group-hover:scale-[1.02] transition-transform duration-700 ease-out">
@@ -69,20 +69,20 @@ export function DemoViewer({ title, description, techStack, folder, frameCount, 
             >
                 <div style={{ transform: "translateZ(30px)" }} className="h-full">
                     <MouseGlowBorder className="h-full rounded-3xl">
-                        <GlassmorphismPanel containerType="low" className="p-8 md:p-10 h-full flex flex-col justify-center rounded-3xl bg-white/50 backdrop-blur-lg border border-white/50 shadow-[0_20px_40px_rgba(0,0,0,0.08)]">
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0058bc]/20 to-[#0058bc]/5 flex items-center justify-center mb-6 text-[#0058bc]">
+                        <GlassmorphismPanel containerType="low" className="p-8 md:p-10 h-full flex flex-col justify-center rounded-3xl bg-white/50 dark:bg-[#1a1a1a]/80 backdrop-blur-lg border border-white/50 dark:border-white/5 shadow-[0_20px_40px_rgba(0,0,0,0.08)]">
+                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0058bc]/20 to-[#0058bc]/5 flex items-center justify-center mb-6 text-[#0058bc] dark:text-[#4da6ff]">
                                 <Eye size={24} />
                             </div>
-                            <h3 className="font-display font-bold text-3xl text-slate-800 mb-4 tracking-tight drop-shadow-sm">{title}</h3>
-                            <p className="font-manrope text-slate-600 mb-8 leading-relaxed">
+                            <h3 className="font-display font-bold text-3xl text-slate-800 dark:text-white mb-4 tracking-tight drop-shadow-sm">{title}</h3>
+                            <p className="font-manrope text-slate-600 dark:text-gray-400 mb-8 leading-relaxed">
                                 {description}
                             </p>
                             
                             <div className="space-y-4 mt-auto">
-                                <h4 className="font-manrope font-bold text-xs uppercase tracking-widest text-[#0058bc]">Tech Stack Matrix</h4>
+                                <h4 className="font-manrope font-bold text-xs uppercase tracking-widest text-[#0058bc] dark:text-[#4da6ff]">Tech Stack Matrix</h4>
                                 <div className="flex flex-wrap gap-2">
                                     {techStack.map(tech => (
-                                        <span key={tech} className="px-3 py-1.5 bg-white/80 border border-white shadow-sm rounded-lg text-xs font-semibold text-slate-700 flex items-center gap-1.5">
+                                        <span key={tech} className="px-3 py-1.5 bg-white/80 dark:bg-slate-800 border border-white dark:border-slate-700 shadow-sm rounded-lg text-xs font-semibold text-slate-700 dark:text-gray-300 flex items-center gap-1.5">
                                             <Code size={12} />
                                             {tech}
                                         </span>

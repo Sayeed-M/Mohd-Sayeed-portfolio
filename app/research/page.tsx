@@ -43,16 +43,16 @@ export const metadata = {
 
 export default function ResearchPage() {
     return (
-        <main className="min-h-screen bg-[#ffffff]">
+        <main className="min-h-screen bg-[#ffffff] dark:bg-[#0a0a0a] transition-colors duration-300">
             <Navbar />
             
             <section className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
                 <div className="mb-16 md:mb-20">
-                    <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-800 mb-6 drop-shadow-sm">
+                    <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 drop-shadow-sm">
                         Research & Analytics
                     </h1>
                     <div className="w-20 h-1.5 bg-gradient-to-r from-[#0058bc] to-[#00c6ff] rounded-full mb-6" />
-                    <p className="font-manrope text-lg text-slate-500 max-w-2xl leading-relaxed">
+                    <p className="font-manrope text-lg text-slate-500 dark:text-gray-400 max-w-2xl leading-relaxed">
                         Deep-dive articles spanning custom autonomous drone behaviors, heavy edge-computed AI frameworks, and front-end interface philosophy.
                     </p>
                 </div>

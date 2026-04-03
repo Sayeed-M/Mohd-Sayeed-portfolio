@@ -8,10 +8,10 @@ export const metadata = {
 
 export default function DemoPage() {
     return (
-      <main className="min-h-screen pt-32 pb-24 px-6 md:px-12 lg:px-24 bg-[#ffffff]">
+      <main className="min-h-screen pt-32 pb-24 px-6 md:px-12 lg:px-24 bg-[#ffffff] dark:bg-[#0a0a0a] transition-colors duration-300">
          <div className="text-center mb-20">
-             <h1 className="font-display font-bold text-4xl md:text-5xl text-slate-800 tracking-tight">Interactive Sandboxes</h1>
-             <p className="font-manrope text-slate-500 mt-5 max-w-2xl mx-auto leading-relaxed">
+             <h1 className="font-display font-bold text-4xl md:text-5xl text-slate-800 dark:text-white tracking-tight">Interactive Sandboxes</h1>
+             <p className="font-manrope text-slate-500 dark:text-gray-400 mt-5 max-w-2xl mx-auto leading-relaxed">
                  Real-time simulation layers executing frame-by-frame structural and navigational analysis directly within the browser runtime.
              </p>
          </div>
