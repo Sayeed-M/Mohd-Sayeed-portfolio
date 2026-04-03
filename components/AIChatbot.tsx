@@ -93,7 +93,7 @@ export function AIChatbot() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary-container text-white shadow-[0_8px_30px_rgba(0,88,188,0.4)] flex items-center justify-center transition-all"
-        aria-label="Open AI Concierge"
+        aria-label="Toggle AI Support Chat"
       >
         <AnimatePresence mode="wait">
           {isOpen ? (

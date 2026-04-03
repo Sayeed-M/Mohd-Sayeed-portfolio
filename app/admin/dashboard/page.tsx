@@ -7,7 +7,9 @@ import { FolderGit2, Blocks, GitBranch, ShieldAlert, GitPullRequest } from "luci
 import { useRouter } from "next/navigation";
 
 import { DashboardCMS } from "@/components/DashboardCMS";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import dynamic from 'next/dynamic';
+
+const AnalyticsChart = dynamic(() => import('@/components/AnalyticsChart'), { ssr: false, loading: () => <div className="w-full h-full flex items-center justify-center text-slate-400 text-sm">Loading telemetry...</div> });
 
 interface DashboardData {
   githubStats: { repos: number; followers: number; username: string; };
@@ -122,14 +124,7 @@ export default function AdminDashboardPage() {
                     <h3 className="font-display text-3xl font-black text-on-surface">{data.cmsRaw?.analytics?.visitors || 1254}</h3>
                  </div>
                  <div className="h-48 w-full">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <LineChart data={mockChartData}>
-                        <CartesianGrid strokeDasharray="3 3" strokeOpacity={0.1} />
-                        <XAxis dataKey="name" strokeOpacity={0.5} fontSize={12} />
-                        <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
-                        <Line type="monotone" dataKey="visitors" stroke="#0058bc" strokeWidth={3} dot={{ r: 4 }} activeDot={{ r: 6 }} />
-                      </LineChart>
-                    </ResponsiveContainer>
+                    <AnalyticsChart data={mockChartData} />
                  </div>
                  <div className="mt-6 flex justify-between items-center text-xs font-manrope font-semibold text-on-surface-variant pt-4 border-t border-outline-variant/10">
                     <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-primary" /> Active Monitoring</span>
