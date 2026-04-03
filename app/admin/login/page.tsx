@@ -9,8 +9,8 @@ import Link from "next/link";
 export default function AdminLoginPage() {
   const router = useRouter();
   const [showPass, setShowPass] = useState(false);
-  const [email, setEmail] = useState("Mohd Sayeed DEV");
-  const [password, setPassword] = useState("788Sayeed15");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const handleLogin = (e: React.FormEvent) => {
@@ -72,7 +72,7 @@ export default function AdminLoginPage() {
                 onFocus={() => setFocusedField("email")}
                 onBlur={() => setFocusedField(null)}
                 className={inputBase}
-                placeholder="Mohd Sayeed DEV"
+                placeholder="Enter Commander ID"
               />
             </div>
 
@@ -89,7 +89,7 @@ export default function AdminLoginPage() {
                   onFocus={() => setFocusedField("password")}
                   onBlur={() => setFocusedField(null)}
                   className={`${inputBase} pr-12`}
-                  placeholder="••••••••••"
+                  placeholder="Enter Auth Key"
                 />
                 <button
                   type="button"
