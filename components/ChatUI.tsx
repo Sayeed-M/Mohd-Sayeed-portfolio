@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from 'framer-motion';
 import { Send, Loader2, Bot, Sparkles } from "lucide-react";
 import { GlassmorphismPanel } from "./GlassmorphismPanel";
 import { MouseGlowBorder } from "./MouseGlowBorder";
@@ -77,7 +77,7 @@ export function ChatUI() {
 
   return (
     <div className="w-full max-w-4xl mx-auto h-[70vh] flex flex-col pt-10 perspective-1000">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 30, rotateX: 5 }}
         animate={{ opacity: 1, y: 0, rotateX: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -108,7 +108,7 @@ export function ChatUI() {
             <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-6 scrollbar-thin">
               <AnimatePresence initial={false}>
                 {messages.map((msg, i) => (
-                  <motion.div
+                  <m.div
                     key={i}
                     initial={{ opacity: 0, y: 20, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -124,12 +124,12 @@ export function ChatUI() {
                     >
                       {msg.parts}
                     </div>
-                  </motion.div>
+                  </m.div>
                 ))}
               </AnimatePresence>
 
               {isLoading && (
-                <motion.div 
+                <m.div 
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="flex justify-start"
@@ -138,7 +138,7 @@ export function ChatUI() {
                     <Loader2 size={18} className="animate-spin text-[#0058bc]" />
                     <span className="text-sm text-slate-500 font-manrope font-medium">Synthesizing response...</span>
                   </div>
-                </motion.div>
+                </m.div>
               )}
               <div ref={bottomRef} className="h-4" />
             </div>
@@ -149,7 +149,7 @@ export function ChatUI() {
               {messages.length === 1 && (
                 <div className="flex flex-wrap gap-2 mb-4">
                   {SUGGESTIONS.map((sug) => (
-                    <motion.button
+                    <m.button
                       key={sug}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -159,7 +159,7 @@ export function ChatUI() {
                     >
                       <Sparkles size={12} />
                       {sug}
-                    </motion.button>
+                    </m.button>
                   ))}
                 </div>
               )}
@@ -174,7 +174,7 @@ export function ChatUI() {
                   disabled={isLoading}
                   className="flex-1 bg-transparent px-4 py-2 text-base font-manrope text-slate-800 placeholder-slate-400 outline-none"
                 />
-                <motion.button
+                <m.button
                   onClick={() => sendMessage()}
                   disabled={isLoading || !input.trim()}
                   whileHover={{ scale: 1.05 }}
@@ -182,12 +182,12 @@ export function ChatUI() {
                   className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0058bc] to-[#0070eb] text-white flex items-center justify-center shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send size={18} className="ml-1" />
-                </motion.button>
+                </m.button>
               </div>
             </div>
           </GlassmorphismPanel>
         </MouseGlowBorder>
-      </motion.div>
+      </m.div>
     </div>
   );
 }

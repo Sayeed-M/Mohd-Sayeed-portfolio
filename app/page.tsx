@@ -2,7 +2,7 @@
 
 import React, { Suspense } from "react";
 import dynamic from "next/dynamic";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { m, useScroll, useTransform } from 'framer-motion';
 import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 
@@ -32,7 +32,7 @@ export default function HomePage() {
       <section className="sticky top-0 h-screen w-full overflow-hidden">
 
         {/* Background Frame Sequence (scroll-driven) */}
-        <motion.div
+        <m.div
           className="absolute inset-0 opacity-35 mix-blend-multiply"
           style={{ scale: heroScale }}
         >
@@ -41,7 +41,7 @@ export default function HomePage() {
             frameCount={240}
             playbackType="scroll"
           />
-        </motion.div>
+        </m.div>
 
         {/* Atmospheric gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-surface/80 pointer-events-none z-5" />
@@ -55,11 +55,11 @@ export default function HomePage() {
 
         {/* Hero Text Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center p-6 md:p-12 z-20 pointer-events-none">
-          <motion.div
+          <m.div
             style={{ y: contentY, opacity: heroOpacity }}
             className="flex flex-col items-center max-w-4xl text-center"
           >
-            <motion.div
+            <m.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.1, type: "spring", stiffness: 200, damping: 20 }}
@@ -69,9 +69,9 @@ export default function HomePage() {
               <span className="text-sm font-semibold tracking-wide text-on-surface uppercase">
                 System Online
               </span>
-            </motion.div>
+            </m.div>
 
-            <motion.h1
+            <m.h1
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
@@ -79,25 +79,25 @@ export default function HomePage() {
             >
               MOHD SAYEED<br />
               S MULLA.
-            </motion.h1>
+            </m.h1>
 
-            <motion.h2
+            <m.h2
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, type: "spring", stiffness: 100 }}
               className="font-manrope text-lg md:text-2xl text-primary font-bold tracking-tight mb-6"
             >
               AI & Robotics Developer | Flutter & Application Developer
-            </motion.h2>
+            </m.h2>
 
-            <motion.p
+            <m.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
               className="font-manrope text-base md:text-lg text-on-surface-variant max-w-2xl leading-relaxed mb-10"
             >
               Bridging precise aerospace hardware with intelligent, cross-platform software. I build systems that process the world in real-time, from deep embedded flight controllers to production-grade mobile applications.
-            </motion.p>
+            </m.p>
             <div className="flex items-center justify-center gap-4 pointer-events-auto">
               <Link
                 href="/projects"
@@ -112,23 +112,23 @@ export default function HomePage() {
                 About Me
               </Link>
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
+        <m.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
           animate={{ opacity: [0.4, 1, 0.4], y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
           <span className="font-manrope text-xs text-on-surface-variant uppercase tracking-widest">Scroll</span>
           <div className="w-px h-10 bg-gradient-to-b from-primary to-transparent" />
-        </motion.div>
+        </m.div>
       </section>
 
       {/* ─── SECTION 2 — PHILOSOPHY ─── */}
       <section className="relative z-30 h-screen flex flex-col items-center justify-center bg-surface-container-low/60 backdrop-blur-xl px-6">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -158,12 +158,12 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </section>
 
       {/* ─── SECTION 3 — CLOSING ─── */}
       <section className="relative z-30 h-screen bg-surface-container-lowest flex items-center justify-center px-6">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -180,7 +180,7 @@ export default function HomePage() {
           >
             Initialize Contact
           </Link>
-        </motion.div>
+        </m.div>
       </section>
     </main>
   );

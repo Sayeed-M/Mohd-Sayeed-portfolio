@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { GlassmorphismPanel } from './GlassmorphismPanel';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export function GlassForm() {
     const [focusedField, setFocusedField] = useState<string | null>(null);
@@ -57,13 +57,13 @@ export function GlassForm() {
                     />
                 </div>
 
-                <motion.button 
+                <m.button 
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-primary-container text-white font-bold font-manrope tracking-wide shadow-atmospheric hover:shadow-lg transition-shadow mt-4"
                 >
                     Transmit Payload
-                </motion.button>
+                </m.button>
             </form>
         </GlassmorphismPanel>
     )

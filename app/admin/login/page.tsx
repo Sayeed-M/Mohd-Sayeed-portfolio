@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import { Lock, Eye, EyeOff, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
 export default function AdminLoginPage() {
   const [showPass, setShowPass] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("Mohd Sayeed DEV");
+  const [password, setPassword] = useState("788Sayeed15");
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const inputBase =
@@ -20,7 +20,7 @@ export default function AdminLoginPage() {
       <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-primary/8 blur-[100px] rounded-full pointer-events-none" />
       <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-tertiary/8 blur-[100px] rounded-full pointer-events-none" />
 
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -54,13 +54,13 @@ export default function AdminLoginPage() {
                 Commander ID
               </label>
               <input
-                type="email"
+                type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 onFocus={() => setFocusedField("email")}
                 onBlur={() => setFocusedField(null)}
                 className={inputBase}
-                placeholder="admin@aeroglass.io"
+                placeholder="Mohd Sayeed DEV"
               />
             </div>
 
@@ -90,7 +90,7 @@ export default function AdminLoginPage() {
               </div>
             </div>
 
-            <motion.button
+            <m.button
               type="submit"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -100,7 +100,7 @@ export default function AdminLoginPage() {
                 <ShieldCheck size={16} />
                 Authenticate
               </div>
-            </motion.button>
+            </m.button>
           </form>
 
           <div className="mt-8 pt-6 border-t border-outline-variant/20 text-center">
@@ -112,7 +112,7 @@ export default function AdminLoginPage() {
             </Link>
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </main>
   );
 }

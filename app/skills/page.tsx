@@ -3,7 +3,7 @@ import React from 'react';
 import { Navbar } from '@/components/Navbar';
 import { SkillRing } from '@/components/SkillRing';
 import { SkillCard } from '@/components/SkillCard';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 
 export default function SkillsPage() {
     const { scrollYProgress } = useScroll();
@@ -18,22 +18,22 @@ export default function SkillsPage() {
             <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-primary/5 dark:bg-primary/20 blur-[100px] rounded-full pointer-events-none -z-10 -translate-x-1/3" />
 
             <section className="pt-40 pb-20 px-6 max-w-7xl mx-auto relative z-10 text-center">
-                <motion.h1 
+                <m.h1 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ type: "spring", stiffness: 100 }}
                     className="font-display text-5xl md:text-7xl font-black tracking-tight text-on-surface mb-6 drop-shadow-sm"
                 >
                     Technical Arsenal.
-                </motion.h1>
-                <motion.p 
+                </m.h1>
+                <m.p 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1, type: "spring", stiffness: 100 }}
                     className="font-manrope text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed"
                 >
                     A comprehensive breakdown of my capabilities ranging from low-level aerospace systems to high-performance frontend interfaces.
-                </motion.p>
+                </m.p>
             </section>
 
             <section className="px-6 md:px-12 max-w-7xl mx-auto relative z-10">
@@ -86,7 +86,7 @@ export default function SkillsPage() {
                 </div>
 
                 {/* Additional Grids for lists without Rings */}
-                <motion.div 
+                <m.div 
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -123,7 +123,7 @@ export default function SkillsPage() {
                             <div className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary" /> Debugging & Testing</div>
                         </div>
                     </div>
-                </motion.div>
+                </m.div>
 
             </section>
         </main>

@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { m, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Navbar } from '@/components/Navbar';
 import { ProjectData } from '../data';
 import { GlassmorphismPanel } from '@/components/GlassmorphismPanel';
@@ -33,7 +33,7 @@ export default function ProjectDetailClient({ project }: { project: ProjectData 
             
             <section className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center lg:items-start">
                 {/* 1. Animation Viewport (Left) */}
-                <motion.div 
+                <m.div 
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -59,10 +59,10 @@ export default function ProjectDetailClient({ project }: { project: ProjectData 
                             </div>
                         </GlassmorphismPanel>
                     </MouseGlowBorder>
-                </motion.div>
+                </m.div>
 
                 {/* 2. Content Info Panel (Right) */}
-                <motion.div 
+                <m.div 
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
@@ -118,7 +118,7 @@ export default function ProjectDetailClient({ project }: { project: ProjectData 
                             </GlassmorphismPanel>
                         </MouseGlowBorder>
                     </div>
-                </motion.div>
+                </m.div>
             </section>
         </main>
     );

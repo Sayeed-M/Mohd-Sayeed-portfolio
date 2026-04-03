@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import FrameSequencePlayer from "./FrameSequencePlayer";
 import { MouseGlowBorder } from "./MouseGlowBorder";
 import { GlassmorphismPanel } from "./GlassmorphismPanel";
@@ -13,7 +13,7 @@ export function ProjectCard({ data, index = 0 }: { data: ProjectData; index?: nu
 
    return (
      <Link href={`/projects/${data.id}`} className="block h-full cursor-pointer">
-       <motion.div
+       <m.div
            initial={{ opacity: 0, y: 30 }}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true, margin: "-50px" }}
@@ -72,7 +72,7 @@ export function ProjectCard({ data, index = 0 }: { data: ProjectData; index?: nu
                    </div>
                </GlassmorphismPanel>
            </MouseGlowBorder>
-       </motion.div>
+       </m.div>
      </Link>
    );
 }

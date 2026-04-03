@@ -2,7 +2,7 @@
 import React from 'react';
 import { GlassmorphismPanel } from './GlassmorphismPanel';
 import { MouseGlowBorder } from './MouseGlowBorder';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { m, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Play, Code, Database, Eye } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
@@ -34,7 +34,7 @@ export function DemoViewer({ title, description, techStack, folder, frameCount, 
     };
 
     return (
-        <motion.div 
+        <m.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -61,7 +61,7 @@ export function DemoViewer({ title, description, techStack, folder, frameCount, 
             </div>
 
             {/* Details Panel */}
-            <motion.div 
+            <m.div 
                 onMouseMove={handleMouseMove}
                 onMouseLeave={() => { x.set(0); y.set(0); }}
                 style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 1000 }}
@@ -92,7 +92,7 @@ export function DemoViewer({ title, description, techStack, folder, frameCount, 
                         </GlassmorphismPanel>
                     </MouseGlowBorder>
                 </div>
-            </motion.div>
-        </motion.div>
+            </m.div>
+        </m.div>
     );
 }

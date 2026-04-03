@@ -4,7 +4,7 @@ import React from "react";
 import { Navbar } from "@/components/Navbar";
 import FrameSequencePlayer from "@/components/FrameSequencePlayer";
 import { GlassmorphismPanel } from "@/components/GlassmorphismPanel";
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 
 const EXPERIENCES = [
   {
@@ -42,7 +42,7 @@ export default function AboutPage() {
       </div>
 
       <section className="relative z-10 pt-32 pb-20 px-6 max-w-4xl mx-auto">
-        <motion.div
+        <m.div
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.8, ease: "easeOut" }}
@@ -55,12 +55,12 @@ export default function AboutPage() {
           <p className="font-manrope text-lg text-on-surface-variant max-w-2xl mx-auto">
              Engineering the invisible. I build mission-critical interfaces and robust flight systems where hardware and software merge effortlessly.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Experience Timeline */}
         <div className="relative border-l-2 border-primary/20 pl-8 ml-4 md:ml-0 space-y-12 py-8">
            {EXPERIENCES.map((exp, idx) => (
-             <motion.div 
+             <m.div 
                 key={idx}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -77,7 +77,7 @@ export default function AboutPage() {
                     <div className="font-manrope text-md text-on-surface-variant font-medium mb-4">{exp.company}</div>
                     <p className="font-manrope text-on-surface-variant leading-relaxed">{exp.desc}</p>
                 </GlassmorphismPanel>
-             </motion.div>
+             </m.div>
            ))}
         </div>
       </section>

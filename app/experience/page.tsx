@@ -3,7 +3,7 @@ import React from 'react';
 import { Navbar } from '@/components/Navbar';
 import { Timeline } from '@/components/Timeline';
 import { TimelineItem } from '@/components/TimelineItem';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export default function ExperiencePage() {
   return (
@@ -14,7 +14,7 @@ export default function ExperiencePage() {
        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-b from-primary/5 via-transparent to-tertiary/5 mix-blend-multiply dark:mix-blend-lighten pointer-events-none -z-10" />
 
       <section className="pt-40 pb-20 px-6 max-w-7xl mx-auto relative z-10">
-        <motion.div 
+        <m.div 
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            className="text-center max-w-2xl mx-auto mb-20"
@@ -23,7 +23,7 @@ export default function ExperiencePage() {
           <p className="font-manrope text-lg text-on-surface-variant leading-relaxed">
             A chronological mapping of my professional internships, full-stack deployments, and engineering milestones.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Timeline Component wrapper */}
         <div className="max-w-4xl mx-auto pl-4 md:pl-0">

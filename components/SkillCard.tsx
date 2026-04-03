@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { SkillRing } from "./SkillRing";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { m, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 interface SkillItem {
   name: string;
@@ -65,7 +65,7 @@ export function SkillCard({
   };
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -80,7 +80,7 @@ export function SkillCard({
       }}
       className="relative h-full w-full z-10 will-change-transform"
     >
-      <motion.div
+      <m.div
         whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(0,0,0,0.15)" }}
         className="h-full rounded-2xl shadow-lg border border-white/30 bg-white/40 backdrop-blur-lg"
         transition={{ type: "spring", stiffness: 400, damping: 30 } as any}
@@ -96,7 +96,7 @@ export function SkillCard({
           <h3 className="font-display font-bold text-2xl text-slate-800 mb-8 tracking-tight border-b border-black/5 pb-4 relative z-10 drop-shadow-sm">
             {category}
           </h3>
-          <motion.div 
+          <m.div 
             variants={containerVariants}
             className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-6 mt-auto place-items-center relative z-10"
           >
@@ -107,9 +107,9 @@ export function SkillCard({
                 label={skill.name}
               />
             ))}
-          </motion.div>
+          </m.div>
         </div>
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 }

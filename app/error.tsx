@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import Link from "next/link";
 
 export default function ErrorPage({
@@ -17,7 +17,7 @@ export default function ErrorPage({
       <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-primary/6 blur-[100px] rounded-full pointer-events-none" />
       <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-tertiary/6 blur-[100px] rounded-full pointer-events-none" />
 
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -54,7 +54,7 @@ export default function ErrorPage({
             </Link>
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </main>
   );
 }

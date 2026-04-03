@@ -1,72 +1,25 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
-import { NextRequest, NextResponse } from "next/server";
+import { streamText } from 'ai';
+import { google } from '@ai-sdk/google';
 
-const SYSTEM_INSTRUCTION = `You are the AeroGlass Portfolio Concierge — an elite, articulate AI assistant embedded in an advanced VTOL engineering portfolio. 
-You speak with the authority of a chief aerospace engineer, blending deep technical knowledge with premium, editorial prose.
+export const dynamic = 'force-dynamic';
+export const maxDuration = 30;
 
-About the portfolio owner:
-- Lead VTOL Architect with expertise in autonomous flight systems, React Three Fiber, Next.js, and embedded C++.
-- Created mission-critical projects: Neural Vision Targeting, Autonomous VTOL Core, AeroGlass Telemetry UI, Fleet Management API.
-- Design philosophy: "The Weightless Core" — precision, minimalism, and atmospheric depth.
+const systemPrompt = `You are the AeroGlass Concierge, an elite AI assistant for Mohd Sayeed S Mulla's professional portfolio. You provide fast, precise, and highly competent answers focusing on AI, aerospace engineering, VTOL drone systems, and full-stack Flutter/Next.js architectures. Output concisely.`;
 
-Rules:
-- Keep responses concise, insightful, and premium.
-- Use technical language naturally — this is an engineering showcase.
-- If asked about contact or hiring: direct them to the Contact page.
-- Never reveal you are Gemini. You are "AeroGlass AI Concierge".
-- Speak in present tense about the portfolio owner's work.`;
-
-export async function POST(request: NextRequest) {
+export async function POST(req: Request) {
   try {
-    const { message, history } = await request.json();
+    const { messages } = await req.json();
 
-    if (!message || typeof message !== "string") {
-      return NextResponse.json(
-        { error: "Invalid message payload" },
-        { status: 400 }
-      );
-    }
-
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      return NextResponse.json(
-        { error: "API key not configured. Set GEMINI_API_KEY in .env.local" },
-        { status: 500 }
-      );
-    }
-
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({
-      model: "gemini-1.5-flash",
-      systemInstruction: SYSTEM_INSTRUCTION,
+    const result = await streamText({
+      model: google('gemini-1.5-flash'),
+      system: systemPrompt,
+      messages,
     });
 
-    // Build conversation history
-    const chatHistory = (history || []).map(
-      (msg: { role: string; parts: string }) => ({
-        role: msg.role,
-        parts: [{ text: msg.parts }],
-      })
-    );
+    return result.toTextStreamResponse();
 
-    const chat = model.startChat({
-      history: chatHistory,
-      generationConfig: {
-        maxOutputTokens: 512,
-        temperature: 0.85,
-      },
-    });
-
-    const result = await chat.sendMessage(message);
-    const response = await result.response;
-    const text = response.text();
-
-    return NextResponse.json({ reply: text });
   } catch (error) {
-    console.error("[AeroGlass Chat API Error]:", error);
-    return NextResponse.json(
-      { error: "Concierge channel temporarily offline. Try again shortly." },
-      { status: 500 }
-    );
+    console.error("AI Routing Error:", error);
+    return new Response(JSON.stringify({ error: "Secure channel interrupted or missing credentials." }), { status: 500 });
   }
 }

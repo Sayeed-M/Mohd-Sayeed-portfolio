@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from 'framer-motion';
 
 export function SkillRing({
   percentage,
@@ -28,8 +28,8 @@ export function SkillRing({
   };
 
   return (
-    <motion.div ref={ref} variants={itemVariants} className="relative flex flex-col items-center justify-center group w-full">
-      <motion.div
+    <m.div ref={ref} variants={itemVariants} className="relative flex flex-col items-center justify-center group w-full">
+      <m.div
         whileHover={{ scale: 1.05 }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
         className="relative"
@@ -51,7 +51,7 @@ export function SkillRing({
             strokeWidth="7"
           />
           {/* Animated Progress Ring */}
-          <motion.circle
+          <m.circle
             cx="55"
             cy="55"
             r={radius}
@@ -71,31 +71,31 @@ export function SkillRing({
         </svg>
 
         {/* Orbiting element for 3D feel on hover - Optional */}
-        <motion.div
+        <m.div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
           animate={{ rotate: 360 }}
           transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
         >
           <div className="absolute top-0 left-1/2 w-1.5 h-1.5 bg-[#00c6ff] rounded-full shadow-[0_0_10px_#00c6ff] -translate-x-1/2 -translate-y-1/2" />
-        </motion.div>
+        </m.div>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
           <span className="font-display font-bold text-lg text-slate-800">
             {isInView ? (
-              <motion.span
+              <m.span
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.5 }}
               >
                 {percentage}%
-              </motion.span>
+              </m.span>
             ) : null}
           </span>
         </div>
-      </motion.div>
+      </m.div>
       <div className="mt-5 font-manrope text-[13px] font-bold text-slate-600 text-center max-w-[100px] leading-snug group-hover:text-primary transition-colors duration-300">
         {label}
       </div>
-    </motion.div>
+    </m.div>
   );
 }

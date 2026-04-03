@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import { MouseGlowBorder } from "./MouseGlowBorder";
 import { GlassmorphismPanel } from "./GlassmorphismPanel";
 import { ArrowRight, BookOpen } from "lucide-react";
@@ -20,7 +20,7 @@ export function BlogCard({ data, index = 0 }: { data: BlogData; index?: number }
 
    return (
      <Link href={`#`} className="block h-full cursor-pointer group">
-       <motion.div
+       <m.div
            initial={{ opacity: 0, y: 30 }}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true, margin: "-50px" }}
@@ -58,17 +58,17 @@ export function BlogCard({ data, index = 0 }: { data: BlogData; index?: number }
                        {/* Interactive Footer */}
                        <div className="mt-auto flex items-center text-sm font-bold font-manrope text-slate-600 group-hover:text-primary transition-colors">
                            Read Research
-                           <motion.div
+                           <m.div
                                initial={{ x: 0, opacity: 0.5 }}
                                animate={{ x: isHovered ? 5 : 0, opacity: isHovered ? 1 : 0.5 }}
                            >
                                <ArrowRight size={16} className="ml-2" />
-                           </motion.div>
+                           </m.div>
                        </div>
                    </div>
                </GlassmorphismPanel>
            </MouseGlowBorder>
-       </motion.div>
+       </m.div>
      </Link>
    );
 }

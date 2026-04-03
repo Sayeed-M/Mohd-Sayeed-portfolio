@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import { useScroll, useMotionValueEvent } from "framer-motion";
+import { useScroll, useMotionValueEvent } from 'framer-motion';
 
 interface FrameSequencePlayerProps {
   folderPath: string;
@@ -29,27 +29,48 @@ export default function FrameSequencePlayer({
   const currentFrame = useRef(0);
   const loopRef = useRef<number>(0);
 
-  // Preload Images
+  // Preload Images progressively
   useEffect(() => {
-    let loadedCount = 0;
+    let active = true;
     const imgArray: HTMLImageElement[] = new Array(frameCount);
+    // Determine boundary for immediate load to enable rapid interaction
+    const immediateLoadCount = Math.min(frameCount, 15);
+    let loadedCount = 0;
 
-    for (let i = 1; i <= frameCount; i++) {
+    const loadRemainingFrames = () => {
+      // Lazy load the rest in the background
+      for (let i = immediateLoadCount + 1; i <= frameCount; i++) {
+        if (!active) break;
+        const img = new Image();
+        const frameNum = String(i).padStart(3, "0");
+        // Optomization tag: user should convert assets to .webp to enhance speed
+        img.src = `${folderPath}/${prefix}${frameNum}${extension}`;
+        imgArray[i - 1] = img;
+      }
+    };
+
+    // Load first chunk critically
+    for (let i = 1; i <= immediateLoadCount; i++) {
       const img = new Image();
       const frameNum = String(i).padStart(3, "0");
       img.src = `${folderPath}/${prefix}${frameNum}${extension}`;
       img.onload = () => {
+        if (!active) return;
         loadedCount++;
-        if (loadedCount === frameCount) {
-          setLoaded(true);
+        if (loadedCount === immediateLoadCount) {
+          setLoaded(true); // Enable playback for first frames immediately
+          loadRemainingFrames(); // Chain background loader
         }
       };
       imgArray[i - 1] = img;
     }
+    
     images.current = imgArray;
 
     return () => {
-        // cleanup if needed
+      active = false;
+      // Aggressive garbage collection cleanup
+      images.current = [];
     };
   }, [folderPath, frameCount, prefix, extension]);
 

@@ -15,10 +15,31 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "AeroGlass VTOL Portfolio",
+  title: "Mohd Sayeed S Mulla | AI & Aerospace Developer",
   description:
-    "The Weightless Core — precision-engineered VTOL systems and interactive WebGL interfaces.",
-  keywords: ["VTOL", "drone", "portfolio", "Next.js", "Three.js", "React"],
+    "Portfolio of Mohd Sayeed S Mulla. Specialized in high-performance autonomous drone design, VTOL logic, WebGL interactive interfaces, and Full-Stack scalable application development.",
+  keywords: ["VTOL", "drone", "portfolio", "Next.js", "Three.js", "React", "AI", "Machine Learning", "Aerospace Engineering"],
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://aeroglass-systems.com'),
+  openGraph: {
+    type: "website",
+    title: "Mohd Sayeed S Mulla | AI & Drone Developer",
+    description: "Bridging autonomous aerospace systems with cutting-edge full-stack software and 3D web experiences.",
+    url: "/",
+    siteName: "Mohd Sayeed Portfolio",
+    images: [{
+      url: "/assets/profile.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Mohd Sayeed S Mulla Professional Portfolio Preview",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mohd Sayeed S Mulla | AI & Drone Developer",
+    description: "Interactive portfolio detailing projects across Next.js, VTOL systems, and AI processing.",
+    images: ["/assets/profile.jpg"],
+    creator: "@AeroGlassSystem",
+  },
 };
 
 export default function RootLayout({

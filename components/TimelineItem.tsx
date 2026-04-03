@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { m, useInView } from 'framer-motion';
 import { GlassmorphismPanel } from './GlassmorphismPanel';
 import { MouseGlowBorder } from './MouseGlowBorder';
 
@@ -22,7 +22,7 @@ export function TimelineItem({ title, company, date, children, index, isLeft }: 
         
         {/* Central timeline marker dot */}
         <div className="absolute left-[20px] md:left-1/2 -translate-x-1/2 mt-8 md:mt-0 md:top-1/2 md:-translate-y-1/2 z-20 flex justify-center items-center pointer-events-none">
-            <motion.div 
+            <m.div 
                 initial={{ scale: 0, opacity: 0 }}
                 animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
                 transition={{ duration: 0.5, delay: 0.2, type: "spring", stiffness: 200 }}
@@ -34,7 +34,7 @@ export function TimelineItem({ title, company, date, children, index, isLeft }: 
         <div className="hidden md:block md:w-1/2" />
         
         {/* Glassmorphism content block */}
-        <motion.div 
+        <m.div 
             initial={{ opacity: 0, x: isLeft ? 40 : -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isLeft ? 40 : -40 }}
             transition={{ duration: 0.6, delay: 0.1, type: "spring" }}
@@ -45,13 +45,13 @@ export function TimelineItem({ title, company, date, children, index, isLeft }: 
                 <MouseGlowBorder className="h-full rounded-2xl">
                     <GlassmorphismPanel containerType="low" className="p-8 h-full relative overflow-visible rounded-2xl group cursor-default">
                         {/* 3D Orbit element */}
-                        <motion.div
+                        <m.div
                             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                             animate={{ rotate: 360 }}
                             transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
                         >
                             <div className="absolute -top-[5px] left-[15%] w-1.5 h-1.5 bg-[#8a2bb9] rounded-full shadow-[0_0_10px_#8a2bb9]" />
-                        </motion.div>
+                        </m.div>
                         
                         <div className="md:hidden flex h-full absolute -left-12 sm:-left-16 top-0 bottom-0 w-8" />
                         
@@ -64,7 +64,7 @@ export function TimelineItem({ title, company, date, children, index, isLeft }: 
                     </GlassmorphismPanel>
                 </MouseGlowBorder>
             </div>
-        </motion.div>
+        </m.div>
     </div>
   );
 }

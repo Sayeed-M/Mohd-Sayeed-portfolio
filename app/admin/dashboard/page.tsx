@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import { Navbar } from "@/components/Navbar";
 import {
   BarChart3,
@@ -29,7 +29,7 @@ const PIPELINE_ITEMS = [
 function StatCard({ stat, idx }: { stat: typeof STATS[0]; idx: number }) {
   const Icon = stat.icon;
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: idx * 0.1, duration: 0.5 }}
@@ -56,7 +56,7 @@ function StatCard({ stat, idx }: { stat: typeof STATS[0]; idx: number }) {
       <div className="font-manrope text-sm text-on-surface-variant">
         {stat.label}
       </div>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -70,7 +70,7 @@ export default function AdminDashboardPage() {
 
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
         {/* Page Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="mb-10"
@@ -81,7 +81,7 @@ export default function AdminDashboardPage() {
           <p className="font-manrope text-on-surface-variant">
             Mission control for all active engineering systems.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
@@ -102,7 +102,7 @@ export default function AdminDashboardPage() {
             </div>
             <div className="space-y-4">
               {PIPELINE_ITEMS.map((item, idx) => (
-                <motion.div
+                <m.div
                   key={item.name}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -117,7 +117,7 @@ export default function AdminDashboardPage() {
                   >
                     {item.status}
                   </span>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function AdminDashboardPage() {
               { label: "Frame Renderer", pct: 100 },
               { label: "AI Concierge", pct: 87 },
             ].map((sys, i) => (
-              <motion.div
+              <m.div
                 key={sys.label}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -145,14 +145,14 @@ export default function AdminDashboardPage() {
                   <span className="text-primary">{sys.pct}%</span>
                 </div>
                 <div className="h-1.5 bg-surface-container-high rounded-full overflow-hidden">
-                  <motion.div
+                  <m.div
                     initial={{ width: 0 }}
                     animate={{ width: `${sys.pct}%` }}
                     transition={{ delay: 0.6 + i * 0.1, duration: 0.8, ease: "easeOut" }}
                     className="h-full bg-gradient-to-r from-primary to-primary-container rounded-full"
                   />
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>

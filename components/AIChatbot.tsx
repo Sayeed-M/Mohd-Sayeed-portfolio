@@ -1,20 +1,20 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send, Loader2, Bot } from "lucide-react";
 
 interface Message {
-  role: "user" | "model";
-  parts: string;
+  role: "user" | "assistant";
+  content: string;
 }
 
 export function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
-      role: "model",
-      parts:
+      role: "assistant",
+      content:
         "AeroGlass Concierge online. I can brief you on engineering specs, project architecture, and the technology stack powering this portfolio. What's your query?",
     },
   ]);
@@ -24,12 +24,13 @@ export function AIChatbot() {
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, isLoading]);
 
-  const sendMessage = async () => {
+  const sendMessage = async (e?: React.FormEvent) => {
+    e?.preventDefault();
     if (!input.trim() || isLoading) return;
 
-    const userMessage: Message = { role: "user", parts: input };
+    const userMessage: Message = { role: "user", content: input };
     const nextMessages = [...messages, userMessage];
     setMessages(nextMessages);
     setInput("");
@@ -39,24 +40,45 @@ export function AIChatbot() {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: input,
-          history: messages,
-        }),
+        body: JSON.stringify({ messages: nextMessages }),
       });
 
-      const data = await res.json();
+      if (!res.ok) throw new Error("API Error");
 
-      if (!res.ok) throw new Error(data.error || "Unknown error");
+      const reader = res.body?.getReader();
+      const decoder = new TextDecoder();
+      let assistantMessage = "";
 
-      setMessages([...nextMessages, { role: "model", parts: data.reply }]);
+      // Append empty assistant message to stream into
+      setMessages([...nextMessages, { role: "assistant", content: "" }]);
+
+      while (reader) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        
+        // Vercel AI SDK streamText sends data formatted as DataStream. 
+        // A simple parse approach parses the raw text out of the specialized Vercel formatting.
+        const chunk = decoder.decode(value, { stream: true });
+        
+        // Basic extract for "0: text" vercel formats
+        const textParts = chunk.split('\n').filter(line => line.startsWith('0:')).map(line => {
+             try { return JSON.parse(line.substring(2)); } catch { return ""; }
+        });
+        
+        assistantMessage += textParts.join('');
+
+        setMessages((prev) => {
+          const updated = [...prev];
+          updated[updated.length - 1].content = assistantMessage;
+          return updated;
+        });
+      }
     } catch (err) {
       setMessages([
         ...nextMessages,
         {
-          role: "model",
-          parts:
-            "⚠ Secure channel interrupted. Please retry your transmission.",
+          role: "assistant",
+          content: "⚠ Secure channel interrupted. Please retry your transmission.",
         },
       ]);
     } finally {
@@ -64,136 +86,86 @@ export function AIChatbot() {
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      sendMessage();
-    }
-  };
-
   return (
     <>
-      {/* Floating Trigger Button */}
-      <motion.button
+      <m.button
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-primary to-tertiary text-white shadow-[0_8px_30px_rgba(0,88,188,0.4)] flex items-center justify-center"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary-container text-white shadow-[0_8px_30px_rgba(0,88,188,0.4)] flex items-center justify-center transition-all"
         aria-label="Open AI Concierge"
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
-            <motion.div
-              key="close"
-              initial={{ rotate: -90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: 90, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
+            <m.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
               <X size={22} />
-            </motion.div>
+            </m.div>
           ) : (
-            <motion.div
-              key="open"
-              initial={{ rotate: 90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: -90, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
+            <m.div key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
               <MessageSquare size={22} />
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
-      </motion.button>
+      </m.button>
 
-      {/* Chat Window */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="fixed bottom-24 right-6 z-50 w-[360px] md:w-[400px] flex flex-col overflow-hidden rounded-3xl border border-white/30 backdrop-blur-2xl bg-white/70 shadow-[0_30px_80px_rgba(20,27,43,0.15)]"
+            className="fixed bottom-24 right-6 z-50 w-[360px] md:w-[400px] flex flex-col overflow-hidden rounded-3xl border border-white/30 dark:border-white/10 backdrop-blur-2xl bg-white/70 dark:bg-black/70 shadow-atmospheric"
             style={{ height: "520px" }}
           >
-            {/* Header */}
-            <div className="flex items-center gap-3 p-4 border-b border-outline-variant/20 bg-gradient-to-r from-primary/5 to-tertiary/5">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-tertiary flex items-center justify-center shadow-atmospheric">
+            <div className="flex items-center gap-3 p-4 border-b border-outline-variant/20 dark:border-white/5 bg-gradient-to-r from-primary/5 to-transparent">
+              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shadow-sm">
                 <Bot size={18} className="text-white" />
               </div>
               <div>
-                <p className="font-display font-bold text-sm text-on-surface">
-                  AeroGlass Concierge
-                </p>
+                <p className="font-display font-bold text-sm text-surface-on dark:text-gray-200">AeroGlass Concierge</p>
                 <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  <p className="font-manrope text-xs text-on-surface-variant">
-                    AI System Online
-                  </p>
+                  <p className="font-manrope text-xs text-slate-500 dark:text-gray-400">AI System Online</p>
                 </div>
               </div>
             </div>
 
-            {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin">
               {messages.map((msg, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
-                >
-                  <div
-                    className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm font-manrope leading-relaxed ${
-                      msg.role === "user"
-                        ? "bg-gradient-to-br from-primary to-primary-container text-white rounded-br-md"
-                        : "bg-white/80 text-on-surface border border-outline-variant/20 rounded-bl-md shadow-sm"
-                    }`}
-                  >
-                    {msg.parts}
+                <m.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
+                  <div className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm font-manrope leading-relaxed ${msg.role === "user" ? "bg-gradient-to-br from-primary to-primary-container text-white rounded-br-md" : "bg-white/80 dark:bg-surface-container-high/60 text-slate-800 dark:text-gray-200 border border-outline-variant/20 dark:border-white/10 rounded-bl-md shadow-sm"}`}>
+                    {msg.content}
                   </div>
-                </motion.div>
+                </m.div>
               ))}
-
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-white/80 border border-outline-variant/20 rounded-2xl rounded-bl-md px-4 py-3 flex items-center gap-2 shadow-sm">
+                  <div className="bg-white/80 dark:bg-surface-container-high/60 border border-outline-variant/20 dark:border-white/10 rounded-2xl rounded-bl-md px-4 py-3 flex items-center gap-2 shadow-sm">
                     <Loader2 size={14} className="animate-spin text-primary" />
-                    <span className="text-xs text-on-surface-variant font-manrope">
-                      Processing...
-                    </span>
+                    <span className="text-xs text-slate-500 dark:text-gray-400 font-manrope">Processing stream...</span>
                   </div>
                 </div>
               )}
               <div ref={bottomRef} />
             </div>
 
-            {/* Input */}
-            <div className="p-4 border-t border-outline-variant/20">
-              <div className="flex items-center gap-2 bg-surface-container-low/60 rounded-2xl border border-outline-variant/20 px-4 py-2">
+            <form onSubmit={sendMessage} className="p-4 border-t border-outline-variant/20 dark:border-white/5">
+              <div className="flex items-center gap-2 bg-slate-100/50 dark:bg-black/50 rounded-2xl border border-outline-variant/20 dark:border-white/10 px-4 py-2 group focus-within:border-primary/50 transition-colors">
                 <input
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={handleKeyDown}
                   placeholder="Transmit query..."
                   disabled={isLoading}
-                  className="flex-1 bg-transparent text-sm font-manrope text-on-surface placeholder-on-surface-variant/60 outline-none"
+                  className="flex-1 bg-transparent text-sm font-manrope text-slate-800 dark:text-gray-200 placeholder-slate-400 dark:placeholder-gray-500 outline-none w-full"
                 />
-                <motion.button
-                  onClick={sendMessage}
-                  disabled={isLoading || !input.trim()}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed"
-                >
+                <button type="submit" disabled={isLoading || !input.trim()} className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center disabled:opacity-40 hover:bg-primary/90 transition-colors">
                   <Send size={14} />
-                </motion.button>
+                </button>
               </div>
-            </div>
-          </motion.div>
+            </form>
+          </m.div>
         )}
       </AnimatePresence>
     </>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { Navbar } from '@/components/Navbar';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { MapPin, Phone, Mail, Link, Send } from 'lucide-react';
 import { GlassmorphismPanel } from '@/components/GlassmorphismPanel';
 import { MouseGlowBorder } from '@/components/MouseGlowBorder';
@@ -20,7 +20,7 @@ export default function ContactPage() {
                 
                 {/* Left Side: Text and Contact Nodes */}
                 <div className="flex flex-col justify-center">
-                     <motion.div
+                     <m.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6 }}
@@ -31,7 +31,7 @@ export default function ContactPage() {
                         <p className="font-manrope text-lg text-on-surface-variant leading-relaxed max-w-md mb-12">
                             Always prepared to discuss innovative systems, robust aerospace UI abstractions, or highly optimized mobile pipelines.
                         </p>
-                    </motion.div>
+                    </m.div>
 
                     <div className="flex flex-col gap-6">
                         <ContactNode icon={<MapPin className="text-primary" />} title="Location" val="Belagavi, Karnataka, India" delay={0.2} />
@@ -42,7 +42,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Right Side: Interactive Glass Form */}
-                <motion.div
+                <m.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
@@ -63,7 +63,7 @@ export default function ContactPage() {
                                         placeholder=" "
                                     />
                                     <label className="absolute left-4 top-4 text-on-surface-variant text-sm font-manrope transition-all peer-focus:-translate-y-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-translate-y-2.5 peer-[:not(:placeholder-shown)]:text-xs">Ident</label>
-                                    {focusedField === 'name' && <motion.div layoutId="glow" className="absolute -inset-[1px] rounded-xl border border-primary/50 shadow-[0_0_15px_var(--color-primary)] pointer-events-none" />}
+                                    {focusedField === 'name' && <m.div layoutId="glow" className="absolute -inset-[1px] rounded-xl border border-primary/50 shadow-[0_0_15px_var(--color-primary)] pointer-events-none" />}
                                 </div>
 
                                 <div className="relative group">
@@ -75,7 +75,7 @@ export default function ContactPage() {
                                         placeholder=" "
                                     />
                                     <label className="absolute left-4 top-4 text-on-surface-variant text-sm font-manrope transition-all peer-focus:-translate-y-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-translate-y-2.5 peer-[:not(:placeholder-shown)]:text-xs">Comms Frequency (Email)</label>
-                                    {focusedField === 'email' && <motion.div layoutId="glow" className="absolute -inset-[1px] rounded-xl border border-primary/50 shadow-[0_0_15px_var(--color-primary)] pointer-events-none" />}
+                                    {focusedField === 'email' && <m.div layoutId="glow" className="absolute -inset-[1px] rounded-xl border border-primary/50 shadow-[0_0_15px_var(--color-primary)] pointer-events-none" />}
                                 </div>
 
                                 <div className="relative group">
@@ -87,20 +87,20 @@ export default function ContactPage() {
                                         placeholder=" "
                                     />
                                     <label className="absolute left-4 top-4 text-on-surface-variant text-sm font-manrope transition-all peer-focus:-translate-y-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-translate-y-2.5 peer-[:not(:placeholder-shown)]:text-xs">Payload (Message)</label>
-                                    {focusedField === 'msg' && <motion.div layoutId="glow" className="absolute -inset-[1px] rounded-xl border border-primary/50 shadow-[0_0_15px_var(--color-primary)] pointer-events-none" />}
+                                    {focusedField === 'msg' && <m.div layoutId="glow" className="absolute -inset-[1px] rounded-xl border border-primary/50 shadow-[0_0_15px_var(--color-primary)] pointer-events-none" />}
                                 </div>
 
-                                <motion.button 
+                                <m.button 
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                     className="mt-4 flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-primary to-primary-container rounded-xl text-white font-manrope font-bold text-sm shadow-[0_5px_20px_rgba(0,88,188,0.3)] hover:shadow-[0_8px_30px_rgba(0,88,188,0.5)] transition-all"
                                 >
                                     Transmit Data <Send size={16} />
-                                </motion.button>
+                                </m.button>
                             </form>
                         </GlassmorphismPanel>
                     </MouseGlowBorder>
-                </motion.div>
+                </m.div>
             </section>
         </main>
     )
@@ -109,7 +109,7 @@ export default function ContactPage() {
 function ContactNode({ icon, title, val, delay, href }: { icon: React.ReactNode, title: string, val: string, delay: number, href?: string }) {
     const Component = href ? 'a' : 'div';
     return (
-        <motion.div
+        <m.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay, duration: 0.5 }}
@@ -127,6 +127,6 @@ function ContactNode({ icon, title, val, delay, href }: { icon: React.ReactNode,
                     <p className="font-manrope text-sm font-bold text-on-surface">{val}</p>
                 </div>
             </Component>
-        </motion.div>
+        </m.div>
     );
 }

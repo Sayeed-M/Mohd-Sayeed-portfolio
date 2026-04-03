@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { m, useScroll, useSpring } from 'framer-motion';
 
 export function Timeline({ children }: { children: React.ReactNode }) {
     const ref = useRef(null);
@@ -22,7 +22,7 @@ export function Timeline({ children }: { children: React.ReactNode }) {
             <div className="absolute left-[19px] md:left-1/2 top-0 bottom-0 w-[2px] bg-outline-variant/30 md:-translate-x-1/2 border-l-2 border-dashed border-outline-variant/30" />
             
             {/* Active animated solid gradient progress line */}
-            <motion.div 
+            <m.div 
                 className="absolute left-[19px] md:left-1/2 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary via-[#0070eb] to-tertiary md:-translate-x-1/2 origin-top rounded-full shadow-[0_0_10px_rgba(0,88,188,0.5)]"
                 style={{ scaleY }}
             />
