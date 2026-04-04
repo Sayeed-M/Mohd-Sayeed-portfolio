@@ -96,6 +96,102 @@
   ],
   "projects": [
     {
+      "id": "pro_1775323246547",
+      "title": "DRONE VIDO",
+      "description": "",
+      "tags": [],
+      "features": [],
+      "media": [
+        "https://drive.google.com/file/d/1hhdECeCg18447lHEFM_YlfmbaqrAUmaZ/view?usp=sharing",
+        "https://drive.google.com/file/d/12vnt7bq1rEpgr3gWWDu9lkGPA7wgFjOg/view?usp=sharing",
+        "https://drive.google.com/file/d/1hhdECeCg18447lHEFM_YlfmbaqrAUmaZ/view?usp=sharing"
+      ],
+      "createdAt": "2026-04-04T17:20:46.547Z",
+      "updatedAt": "2026-04-04T17:22:01.136Z"
+    },
+    {
+      "id": "pro_1775322859513",
+      "title": "Blinket-data-analysis-with-python-and-jupyter",
+      "description": "A data analysis project that explores Blinkit sales data using Python to extract meaningful insights and visualize business trends.",
+      "tags": [
+        "Jupyter",
+        "EDA",
+        "jupyter Notebook",
+        "Matplotlib / Seaborn",
+        "Pandas",
+        "Python"
+      ],
+      "features": [
+        "Data cleaning and preprocessing",
+        "Exploratory Data Analysis (EDA)",
+        "Sales and category insights",
+        "Data visualization using charts",
+        "Business insights generation"
+      ],
+      "media": [
+        "https://drive.google.com/file/d/1a6zRN9nJvSdGhMv2iaRqQw1mPSB5MYDk/view?usp=sharing"
+      ],
+      "createdAt": "2026-04-04T17:14:19.513Z",
+      "updatedAt": "2026-04-04T17:18:47.465Z",
+      "date": "Exploratory Data Analysis of Blinkit Sales and Business Insights/Data Analyst / Python Developer",
+      "fullDetails": "Performed data cleaning, analysis, and visualization using Jupyter Notebook to understand sales patterns, customer behavior, and product performance.",
+      "githubUrl": "https://github.com/Sayeed-M/Blinket-data-analysis-with-python-and-jupyter.git"
+    },
+    {
+      "id": "pro_1775322246325",
+      "title": "Student -Mangement- System",
+      "description": "A web application to manage student records, documents, and academic data efficiently.",
+      "tags": [
+        "PHP",
+        "MySQL",
+        "HTML/CSS",
+        "JavaScript",
+        "StudentManagement",
+        "CRUD",
+        "WebApp"
+      ],
+      "features": [
+        "Add, update, delete student records",
+        "Document upload and management",
+        "Secure admin login",
+        "Fast data retrieval"
+      ],
+      "media": [
+        "https://drive.google.com/file/d/1-OoMDsLVdHmlWja3yEcPEci_AF-skJwo/view?usp=sharing"
+      ],
+      "createdAt": "2026-04-04T17:04:06.325Z",
+      "updatedAt": "2026-04-04T17:10:39.827Z",
+      "date": "Web-Based Student Data Management System / Full Stack Developer   ",
+      "fullDetails": "Stores, updates, and retrieves student information using a centralized database with admin access.",
+      "githubUrl": "https://github.com/Sayeed-M/studentms.git"
+    },
+    {
+      "id": "pro_1775321654767",
+      "title": "Shared Preferences App",
+      "description": "The Shared Preferences App is a lightweight mobile application developed to demonstrate efficient local data storage using key-value pairs. It enables users to store, retrieve, update, and delete small amounts of persistent data such as user settings, preferences, and session information.\n\nThe application focuses on simplicity, performance, and usability, making it ideal for managing small-scale data without the need for a full database system.",
+      "tags": [],
+      "features": [],
+      "media": [],
+      "createdAt": "2026-04-04T16:54:14.767Z",
+      "updatedAt": "2026-04-04T17:04:03.173Z",
+      "date": "Role  Mobile App Developer (Flutter / Android),Lightweight Local Storage App using Key-Value Persistence",
+      "fullDetails": "What is Shared Preferences?\n\nShared Preferences is a local storage mechanism used in mobile development (primarily Android and Flutter) that allows applications to store small amounts of data persistently in the form of key-value pairs.\n\nHow the Application Works\nUsers input data such as username, email, or app settings\nThe data is stored locally using SharedPreferences\nStored data can be retrieved and displayed instantly\nUsers can update or delete stored data as needed\nData remains available even after restarting the application\nArchitecture Overview\nFrontend UI handles user interaction\nSharedPreferences API manages local storage\nState updates reflect instantly in the UI\nKey Features\nPersistent local data storage\nFast read and write operations\nSimple key-value based data handling\nClean and user-friendly interface\nReal-time updates of stored data\nNo dependency on external databases\nEfficient memory usage\nEasy integration into larger applications",
+      "githubUrl": "https://github.com/Sayeed-M/shared_perference_app.git"
+    },
+    {
+      "id": "pro_1775321161949",
+      "title": "Calculator_App",
+      "description": "The Calculator App is a native-compiled mobile application developed with Flutter and Dart. It provides users with a fast, intuitive, and reliable tool for everyday arithmetic calculations. By leveraging Flutter's single codebase architecture, the app ensures a consistent experience and smooth performance across both iOS and Android devices.",
+      "tags": [],
+      "features": [],
+      "media": [
+        "https://drive.google.com/file/d/1jsTAPf5MIK4gNTqZt7YPvMszzET6zRDy/view?usp=sharing"
+      ],
+      "createdAt": "2026-04-04T16:46:01.949Z",
+      "updatedAt": "2026-04-04T16:49:32.414Z",
+      "githubUrl": "https://github.com/Sayeed-M/Calculator_App.git"
+    },
+    {
       "id": "proj_1",
       "title": "OpenAI App (Flutter & Android)",
       "description": "Cross-platform mobile application integrating OpenAI APIs for intelligent assistance.",
@@ -159,11 +255,13 @@
         "Score tracking and history",
         "Animated result cards"
       ],
-      "media": [],
-      "githubUrl": "",
+      "media": [
+        "https://drive.google.com/file/d/1e5b1hV34zzojIH-1MpWdWgKIYeu2EGUl/view?usp=sharing"
+      ],
+      "githubUrl": "https://github.com/Sayeed-M/rock_paper_scissors_app.git",
       "liveUrl": "",
       "createdAt": "2024-02-15T00:00:00.000Z",
-      "updatedAt": "2024-02-15T00:00:00.000Z"
+      "updatedAt": "2026-04-04T16:43:35.880Z"
     },
     {
       "id": "proj_4",
@@ -181,11 +279,13 @@
         "Animated board transitions",
         "Score persistence"
       ],
-      "media": [],
+      "media": [
+        "https://drive.google.com/file/d/1r9qdTsaq3ZR2nonWchgW93fO2S3VzEzK/view?usp=sharing"
+      ],
       "githubUrl": "https://github.com/Sayeed-M/To_do_app.git",
       "liveUrl": "",
       "createdAt": "2024-03-01T00:00:00.000Z",
-      "updatedAt": "2026-04-03T14:20:12.471Z"
+      "updatedAt": "2026-04-04T16:20:38.665Z"
     },
     {
       "id": "proj_5",
@@ -203,11 +303,13 @@
         "Procedural pipe generation",
         "High score leaderboard"
       ],
-      "media": [],
-      "githubUrl": "",
+      "media": [
+        "https://drive.google.com/file/d/1_30ard2qwzCIi102o3DfGMX_j8IJ8Yrm/view?usp=sharing"
+      ],
+      "githubUrl": "https://github.com/Sayeed-M/flappy_bird_game_app.git",
       "liveUrl": "",
       "createdAt": "2024-03-15T00:00:00.000Z",
-      "updatedAt": "2024-03-15T00:00:00.000Z"
+      "updatedAt": "2026-04-04T16:43:10.506Z"
     },
     {
       "id": "proj_6",
@@ -225,11 +327,13 @@
         "Accessible high-contrast UI",
         "Custom interval configuration"
       ],
-      "media": [],
-      "githubUrl": "",
+      "media": [
+        "https://drive.google.com/file/d/1Do2GRgF_4CmPkr7xx0cp8QPBZGQ1setg/view?usp=sharing"
+      ],
+      "githubUrl": "https://github.com/Sayeed-M/Mindful_Meal_Timer_app.git",
       "liveUrl": "",
       "createdAt": "2024-04-01T00:00:00.000Z",
-      "updatedAt": "2024-04-01T00:00:00.000Z"
+      "updatedAt": "2026-04-04T16:42:45.520Z"
     },
     {
       "id": "proj_7",
@@ -247,11 +351,13 @@
         "Conversation context memory",
         "Multi-turn dialogue support"
       ],
-      "media": [],
-      "githubUrl": "",
+      "media": [
+        "https://drive.google.com/file/d/1bTDiuvsRTa7o7QkQA2t7HXNp4Ry8QDrs/view?usp=sharing"
+      ],
+      "githubUrl": "https://github.com/Sayeed-M/Gemini.git",
       "liveUrl": "",
       "createdAt": "2024-05-01T00:00:00.000Z",
-      "updatedAt": "2024-05-01T00:00:00.000Z"
+      "updatedAt": "2026-04-04T16:42:14.531Z"
     },
     {
       "id": "proj_8",
@@ -269,11 +375,13 @@
         "Data export functionality",
         "Alert and threshold system"
       ],
-      "media": [],
-      "githubUrl": "",
+      "media": [
+        "https://drive.google.com/file/d/1M8km4XNndh7QPb23sB2QLbpIHklH6vAv/view?usp=sharing"
+      ],
+      "githubUrl": "https://github.com/Sayeed-M/Cloud_viewer_App_.git",
       "liveUrl": "",
       "createdAt": "2024-06-01T00:00:00.000Z",
-      "updatedAt": "2024-06-01T00:00:00.000Z"
+      "updatedAt": "2026-04-04T16:41:26.439Z"
     },
     {
       "id": "proj_9",
@@ -312,11 +420,13 @@
         "Animated dice roll UI",
         "Sound effects on shake"
       ],
-      "media": [],
-      "githubUrl": "",
+      "media": [
+        "https://drive.google.com/file/d/1UvQcFa_64atfdS_iqA7vEBND2Q1x513G/view?usp=sharing"
+      ],
+      "githubUrl": "https://github.com/Sayeed-M/Dice_Game_Flutter.git",
       "liveUrl": "",
       "createdAt": "2024-07-15T00:00:00.000Z",
-      "updatedAt": "2024-07-15T00:00:00.000Z"
+      "updatedAt": "2026-04-04T16:39:45.964Z"
     },
     {
       "id": "proj_11",
@@ -334,11 +444,13 @@
         "Colorful touch-reactive grid",
         "Sound recording playback"
       ],
-      "media": [],
+      "media": [
+        "https://drive.google.com/file/d/1UvQcFa_64atfdS_iqA7vEBND2Q1x513G/view?usp=sharing"
+      ],
       "githubUrl": "",
       "liveUrl": "",
       "createdAt": "2024-08-01T00:00:00.000Z",
-      "updatedAt": "2024-08-01T00:00:00.000Z"
+      "updatedAt": "2026-04-04T16:39:05.367Z"
     },
     {
       "id": "proj_12",
@@ -355,11 +467,13 @@
         "Vibration and audio alerts",
         "Preset cooking times"
       ],
-      "media": [],
-      "githubUrl": "",
+      "media": [
+        "https://drive.google.com/file/d/19BgJEkrERjwrB_Quo0bzsalmDZbE7Ttl/view?usp=sharing"
+      ],
+      "githubUrl": "https://github.com/Sayeed-M/Dicee-iOS13.git",
       "liveUrl": "",
       "createdAt": "2024-08-15T00:00:00.000Z",
-      "updatedAt": "2024-08-15T00:00:00.000Z"
+      "updatedAt": "2026-04-04T16:38:29.344Z"
     }
   ],
   "experience": [
