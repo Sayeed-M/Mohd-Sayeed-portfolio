@@ -32,7 +32,7 @@ export function MouseGlowBorder({
         className="pointer-events-none absolute -inset-px transition-opacity duration-300"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(0,88,188,0.1), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, color-mix(in srgb, var(--primary) 18%, transparent), transparent 40%)`,
         }}
       />
       {children}

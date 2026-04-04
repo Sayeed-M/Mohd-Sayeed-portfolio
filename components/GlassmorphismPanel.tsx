@@ -14,20 +14,20 @@ export function GlassmorphismPanel({
 }: GlassmorphismPanelProps) {
   const bgClass =
     containerType === "low"
-      ? "bg-[rgba(241,243,255,0.2)]"
-      : "bg-[rgba(255,255,255,0.4)]";
+      ? "bg-[color-mix(in_srgb,var(--surface-container-low)_82%,transparent)]"
+      : "bg-[color-mix(in_srgb,var(--surface)_72%,transparent)]";
 
   return (
     <div
       className={cn(
-        "relative backdrop-blur-xl border border-outline-variant/15 shadow-[0_20px_50px_rgba(20,27,43,0.06)] overflow-hidden rounded-2xl",
+        "relative overflow-hidden rounded-2xl border border-outline-variant/15 backdrop-blur-xl shadow-[0_20px_50px_color-mix(in_srgb,var(--on-surface)_8%,transparent)]",
         bgClass,
         className
       )}
       {...props}
     >
       {/* Light catch edge */}
-      <div className="absolute inset-0 border-t border-l border-white/40 pointer-events-none rounded-2xl"></div>
+      <div className="pointer-events-none absolute inset-0 rounded-2xl border-t border-l border-[color-mix(in_srgb,var(--surface)_65%,transparent)]"></div>
       {children}
     </div>
   );

@@ -98,62 +98,268 @@
     {
       "id": "proj_1",
       "title": "OpenAI App (Flutter & Android)",
-      "description": "Cross-platform mobile application integrating OpenAI APIs."
+      "description": "Cross-platform mobile application integrating OpenAI APIs for intelligent assistance.",
+      "fullDetails": "Developed a cross-platform mobile application powered by Flutter and natively compiled for Android/iOS. It integrates seamlessly with OpenAI's API to deliver intelligent prompt processing, code generation, and ambient conversational capabilities directly natively.",
+      "tags": [
+        "Flutter",
+        "Android",
+        "OpenAI API",
+        "iOS"
+      ],
+      "features": [
+        "Real-time AI prompt processing via OpenAI GPT",
+        "Cross-platform support: Android & iOS",
+        "Code generation and explanation mode",
+        "Conversation history with local storage",
+        "Dark/Light theme support"
+      ],
+      "media": [],
+      "githubUrl": "",
+      "liveUrl": "",
+      "createdAt": "2024-01-15T00:00:00.000Z",
+      "updatedAt": "2024-01-15T00:00:00.000Z"
     },
     {
       "id": "proj_2",
       "title": "To-Do Task App",
-      "description": "Task management productivity application."
+      "description": "Task management productivity application with offline-first architecture.",
+      "fullDetails": "Constructed a responsive task tracker utilizing robust state management and local storage to prevent data loss. The UI relies heavily on physical spring physics for drag-to-delete behaviors reflecting premium app interactions.",
+      "tags": [
+        "App Development",
+        "UI/UX",
+        "State Management"
+      ],
+      "features": [
+        "Offline-first local storage",
+        "Drag-to-delete with spring physics",
+        "Priority categorization",
+        "Deadline reminders"
+      ],
+      "media": [
+        "https://drive.google.com/file/d/1PQqIaR2k4fziMF5KP1GUYsCZIQTO2Lif/view?usp=drive_link"
+      ],
+      "githubUrl": "https://github.com/Sayeed-M/To_do_app.git",
+      "liveUrl": "",
+      "createdAt": "2024-02-01T00:00:00.000Z",
+      "updatedAt": "2026-04-04T15:53:54.268Z"
     },
     {
       "id": "proj_3",
-      "title": " Rock Paper Scissors Game",
-      "description": "Interactive mobile game with state management logic."
+      "title": "Rock Paper Scissors Game",
+      "description": "Interactive mobile game with state management logic and AI opponent.",
+      "fullDetails": "A lightweight mobile experience demonstrating fundamental state machines and stateless vs. stateful UI component separation. Includes haptic feedback hooks and randomized delay algorithms to simulate an opponent AI.",
+      "tags": [
+        "Game Logic",
+        "Mobile",
+        "UI"
+      ],
+      "features": [
+        "AI opponent with randomized strategy",
+        "Haptic feedback on results",
+        "Score tracking and history",
+        "Animated result cards"
+      ],
+      "media": [],
+      "githubUrl": "",
+      "liveUrl": "",
+      "createdAt": "2024-02-15T00:00:00.000Z",
+      "updatedAt": "2024-02-15T00:00:00.000Z"
     },
     {
       "id": "proj_4",
       "title": "Tic Tac Toe",
-      "description": "Classic logic game with dynamic UI mapping."
+      "description": "Classic logic game with dynamic UI mapping and winner evaluation.",
+      "fullDetails": "Implemented the classic 3x3 grid game relying on two-dimensional array mappings and continuous winner-evaluation loops mapped directly to reactive UI states.",
+      "tags": [
+        "Game Dev",
+        "Logic",
+        "Arrays"
+      ],
+      "features": [
+        "2-player local multiplayer",
+        "Win detection algorithm",
+        "Animated board transitions",
+        "Score persistence"
+      ],
+      "media": [],
+      "githubUrl": "https://github.com/Sayeed-M/To_do_app.git",
+      "liveUrl": "",
+      "createdAt": "2024-03-01T00:00:00.000Z",
+      "updatedAt": "2026-04-03T14:20:12.471Z"
     },
     {
       "id": "proj_5",
       "title": "Flappy Bird Game",
-      "description": "Physics-based 2D side-scrolling mobile game clone."
+      "description": "Physics-based clone with raw velocity loops and real-time collision detection.",
+      "fullDetails": "A complete mobile clone integrating raw rendering loop velocities and collision-detection algorithms to emulate gravity, impulse tracking, and bounded box collisions in real-time.",
+      "tags": [
+        "Physics",
+        "Collision",
+        "Mobile Game"
+      ],
+      "features": [
+        "60fps render loop",
+        "Gravity and impulse simulation",
+        "Procedural pipe generation",
+        "High score leaderboard"
+      ],
+      "media": [],
+      "githubUrl": "",
+      "liveUrl": "",
+      "createdAt": "2024-03-15T00:00:00.000Z",
+      "updatedAt": "2024-03-15T00:00:00.000Z"
     },
     {
       "id": "proj_6",
-      "title": " Mindful Meal Timer",
-      "description": "Health and wellness pacing application."
+      "title": "Mindful Meal Timer",
+      "description": "Health-oriented utility app managing timed eating intervals.",
+      "fullDetails": "An application designed to pace eating habits using background service timers, local notifications, and highly accessible contrasting UI rings tracking elapsed time.",
+      "tags": [
+        "Health",
+        "Utility",
+        "Timers"
+      ],
+      "features": [
+        "Background service timers",
+        "Local push notifications",
+        "Accessible high-contrast UI",
+        "Custom interval configuration"
+      ],
+      "media": [],
+      "githubUrl": "",
+      "liveUrl": "",
+      "createdAt": "2024-04-01T00:00:00.000Z",
+      "updatedAt": "2024-04-01T00:00:00.000Z"
     },
     {
       "id": "proj_7",
-      "title": " Gemini AI Chat App",
-      "description": "Advanced conversational assistant powered by Google Gemini."
+      "title": "Gemini AI Chat App",
+      "description": "Real-time dialogue interface backed by Google's Gemini LLMs.",
+      "fullDetails": "A robust chat implementation utilizing advanced asynchronous stream handling. Built directly against the Gemini API to rapidly parse rich text, render code blocks, and maintain massive context windows securely on mobile.",
+      "tags": [
+        "AI",
+        "Gemini API",
+        "Chat Stream"
+      ],
+      "features": [
+        "Streaming Gemini API responses",
+        "Markdown and code block rendering",
+        "Conversation context memory",
+        "Multi-turn dialogue support"
+      ],
+      "media": [],
+      "githubUrl": "",
+      "liveUrl": "",
+      "createdAt": "2024-05-01T00:00:00.000Z",
+      "updatedAt": "2024-05-01T00:00:00.000Z"
     },
     {
       "id": "proj_8",
-      "title": " Cloud View Service",
-      "description": "Weather and atmospheric data retrieval application."
+      "title": "Cloud View Service",
+      "description": "Distributed monitoring and data telemetry dashboard UI.",
+      "fullDetails": "Engineered to map incoming data sets from remote sensory systems into readable, responsive frontend blocks mimicking core enterprise dashboard structures.",
+      "tags": [
+        "Data",
+        "Networking",
+        "Telemetry"
+      ],
+      "features": [
+        "Live data stream integration",
+        "Responsive dashboard grid",
+        "Data export functionality",
+        "Alert and threshold system"
+      ],
+      "media": [],
+      "githubUrl": "",
+      "liveUrl": "",
+      "createdAt": "2024-06-01T00:00:00.000Z",
+      "updatedAt": "2024-06-01T00:00:00.000Z"
     },
     {
       "id": "proj_9",
-      "title": " iOS Projects",
-      "description": "Various internal and test applications built with Swift for iOS."
+      "title": "iOS Projects",
+      "description": "Various internal and test applications built with Swift for iOS.",
+      "fullDetails": "A collection of Swift-based iOS applications exploring different UIKit and SwiftUI patterns, gesture recognizers, CoreData integration, and native API usage.",
+      "tags": [
+        "iOS",
+        "Swift",
+        "UIKit"
+      ],
+      "features": [
+        "UIKit and SwiftUI exploration",
+        "CoreData local persistence",
+        "Native gesture recognizers",
+        "App Store build optimization"
+      ],
+      "media": [],
+      "githubUrl": "",
+      "liveUrl": "",
+      "createdAt": "2024-07-01T00:00:00.000Z",
+      "updatedAt": "2024-07-01T00:00:00.000Z"
     },
     {
       "id": "proj_10",
-      "title": " Dicee App",
-      "description": "Randomized number generation and state manipulation."
+      "title": "Dicee App",
+      "description": "Randomized number generation using device accelerometer shake gestures.",
+      "fullDetails": "Introduced native gesture shaking detection utilizing accelerometer APIs to trigger constrained random number generations dynamically refreshing the UI.",
+      "tags": [
+        "Hardware API",
+        "Generators"
+      ],
+      "features": [
+        "Accelerometer shake detection",
+        "Constrained random generation",
+        "Animated dice roll UI",
+        "Sound effects on shake"
+      ],
+      "media": [],
+      "githubUrl": "",
+      "liveUrl": "",
+      "createdAt": "2024-07-15T00:00:00.000Z",
+      "updatedAt": "2024-07-15T00:00:00.000Z"
     },
     {
       "id": "proj_11",
       "title": "Xylophone App",
-      "description": "Audio playback and interactive sound mapping application."
+      "description": "Low-latency audio application playing sequenced audio nodes on touch.",
+      "fullDetails": "An interactive soundboard proving low-latency audio caching and playback abilities inside a compact, vibrant, touch-responsive grid.",
+      "tags": [
+        "Audio",
+        "Touch Events",
+        "Latency"
+      ],
+      "features": [
+        "Low-latency audio buffer cache",
+        "8-note musical scale",
+        "Colorful touch-reactive grid",
+        "Sound recording playback"
+      ],
+      "media": [],
+      "githubUrl": "",
+      "liveUrl": "",
+      "createdAt": "2024-08-01T00:00:00.000Z",
+      "updatedAt": "2024-08-01T00:00:00.000Z"
     },
     {
       "id": "proj_12",
-      "title": " Egg Timer",
-      "description": "Precision countdown interface application."
+      "title": "Egg Timer",
+      "description": "Precise multi-stage background-executing chronometer with notifications.",
+      "fullDetails": "Leveraged deeply nested background thread processes to prevent the OS from killing the timer when the app leaves the foreground.",
+      "tags": [
+        "Background Services",
+        "Timers"
+      ],
+      "features": [
+        "Foreground-safe background timer",
+        "Multi-stage countdown support",
+        "Vibration and audio alerts",
+        "Preset cooking times"
+      ],
+      "media": [],
+      "githubUrl": "",
+      "liveUrl": "",
+      "createdAt": "2024-08-15T00:00:00.000Z",
+      "updatedAt": "2024-08-15T00:00:00.000Z"
     }
   ],
   "experience": [
@@ -162,35 +368,45 @@
       "title": "Software Developer Intern",
       "subtitle": "Sarus Aerospace Pvt. Ltd. • Belagavi",
       "date": "Feb 2026 – Present",
-      "description": "Developing AI-driven aerospace software systems\nWorking on autonomous and intelligent applications\nApplying Computer Vision & Automation techniques\nAssisting in system integration, testing, and debugging\nOptimizing system performance\nGaining real-world exposure to aerospace engineering systems"
+      "description": "Developing AI-driven aerospace software systems\nWorking on autonomous and intelligent applications\nApplying Computer Vision & Automation techniques\nAssisting in system integration, testing, and debugging\nOptimizing system performance\nGaining real-world exposure to aerospace engineering systems",
+      "createdAt": "2026-02-01T00:00:00.000Z",
+      "updatedAt": "2026-02-01T00:00:00.000Z"
     },
     {
       "id": "exp_2",
       "title": "Senior Customer Support Engineer",
       "subtitle": "Verdeus Naturals Pvt. Ltd. • Belagavi",
       "date": "Sep 2024 – Jan 2025",
-      "description": "Handled product deployment and customer support\nPerformed installation, configuration, and data entry\nProvided on-site support across India\nEnsured smooth product launches\nResolved customer issues efficiently\nDeveloped strong communication & problem-solving skills"
+      "description": "Handled product deployment and customer support\nPerformed installation, configuration, and data entry\nProvided on-site support across India\nEnsured smooth product launches\nResolved customer issues efficiently\nDeveloped strong communication & problem-solving skills",
+      "createdAt": "2024-09-01T00:00:00.000Z",
+      "updatedAt": "2024-09-01T00:00:00.000Z"
     },
     {
       "id": "exp_3",
       "title": "Full Stack Web Developer Intern",
       "subtitle": "Edureka Learning Center • Belagavi",
       "date": "Apr 2024 – May 2024",
-      "description": "Built full-stack web applications\nWorked with HTML, CSS, JavaScript & backend technologies\nDesigned UI and implemented application logic\nIntegrated databases\nPerformed debugging, testing, and deployment\nDelivered project within timeline"
+      "description": "Built full-stack web applications\nWorked with HTML, CSS, JavaScript & backend technologies\nDesigned UI and implemented application logic\nIntegrated databases\nPerformed debugging, testing, and deployment\nDelivered project within timeline",
+      "createdAt": "2024-04-01T00:00:00.000Z",
+      "updatedAt": "2024-04-01T00:00:00.000Z"
     },
     {
       "id": "exp_4",
       "title": "React.js Developer (Training Program)",
       "subtitle": "Edureka Learning Center",
       "date": "Apr 2024 – May 2024",
-      "description": "Developed responsive UI using React.js\nWorked with components and state management\nUsed modern JavaScript for efficient frontend development"
+      "description": "Developed responsive UI using React.js\nWorked with components and state management\nUsed modern JavaScript for efficient frontend development",
+      "createdAt": "2024-04-01T00:00:00.000Z",
+      "updatedAt": "2024-04-01T00:00:00.000Z"
     },
     {
       "id": "exp_5",
       "title": "Android Developer Intern",
       "subtitle": "Topperworld • Remote",
       "date": "Sep 2023 – Oct 2023",
-      "description": "Developed Android applications\nWorked on UI design and app logic\nDebugged and tested applications\nCollaborated on assigned tasks\nDelivered projects successfully"
+      "description": "Developed Android applications\nWorked on UI design and app logic\nDebugged and tested applications\nCollaborated on assigned tasks\nDelivered projects successfully",
+      "createdAt": "2023-09-01T00:00:00.000Z",
+      "updatedAt": "2023-09-01T00:00:00.000Z"
     }
   ],
   "research": [],
