@@ -96,6 +96,95 @@
   ],
   "projects": [
     {
+      "id": "pro_1775324997342",
+      "title": "Nabha Shiksha Connect",
+      "description": "A web-based platform designed to connect students and teachers, enabling communication, learning, and academic management in a centralized system.",
+      "tags": [
+        "PHP",
+        "MySQL",
+        "HTML/CSS",
+        "JavaScript",
+        "EdTech",
+        "WebApp",
+        "StudentSystem",
+        "EducationPlatform"
+      ],
+      "features": [
+        "Student and teacher interaction system",
+        "Academic data and record management",
+        "Resource sharing (notes, updates)",
+        "Secure login and user roles",
+        "Centralized education platform"
+      ],
+      "media": [
+        "https://drive.google.com/file/d/138HGwGaPpgyjiCVtcUepPXjzQmr9Oamh/view?usp=sharing"
+      ],
+      "createdAt": "2026-04-04T17:49:57.342Z",
+      "updatedAt": "2026-04-04T17:53:50.150Z",
+      "date": "Here is your short, clean, professional content for Nabha Shiksha Connect 👇  Nabha Shiksha Connect Subtitle  Digital Platform for Student–Teacher Communication and Education Management |  Role |  Full Stack Developer",
+      "fullDetails": "Provides features for managing student information, sharing academic resources, and improving communication between teachers and students through a structured digital interface.",
+      "githubUrl": "https://github.com/Sayeed-M/Nabha-Shiksha-Connect.git"
+    },
+    {
+      "id": "pro_1775324650738",
+      "title": "Vehicle Sales Data Analysis with Python and Jupyter",
+      "description": "A data analysis project focused on exploring vehicle sales data to identify trends, patterns, and business insights.",
+      "tags": [
+        "VehicleSales",
+        "EDA",
+        "Python",
+        "DataAnalysis",
+        "Jupyter Notebook",
+        "Matplotlib / Seaborn",
+        "NumPy",
+        "Pandas"
+      ],
+      "features": [
+        "Data cleaning and preprocessing",
+        "Exploratory Data Analysis (EDA)",
+        "Sales trend and pattern analysis",
+        "Data visualization",
+        "Business insights generation"
+      ],
+      "media": [
+        "https://drive.google.com/file/d/1S8C-QY11I1LKy-AvrdkdaRxjlR4CvTl8/view?usp=sharing"
+      ],
+      "createdAt": "2026-04-04T17:44:10.738Z",
+      "updatedAt": "2026-04-04T17:48:15.189Z",
+      "date": "Data Analyst / Python Developer",
+      "fullDetails": "Performed data cleaning, exploratory data analysis (EDA), and visualization to analyze vehicle pricing, sales trends, and market patterns using Python and Jupyter Notebook. Vehicle sales analysis typically involves identifying trends, patterns, and insights from datasets to support decision-making.",
+      "githubUrl": "https://github.com/Sayeed-M/Vehicle_Sales_Data_-Analysis_with_Python_and_Jupyter.git"
+    },
+    {
+      "id": "pro_1775324303135",
+      "title": "Customer Pattern Analysis with Python and Jupyter",
+      "description": "Customer Behavior Analysis and Pattern Discovery using Data Science A data analysis project focused on identifying customer behavior patterns and trends using Python and data visualization techniques.",
+      "tags": [
+        "CustomerAnalytics",
+        "EDA",
+        "Jupyter Notebook",
+        "Matplotlib / Seaborn",
+        "NumPy",
+        "Pandas",
+        "Python"
+      ],
+      "features": [
+        "Data cleaning and preprocessing",
+        "Insight generation for decision making",
+        "Data visualization",
+        "Customer pattern and trend analysis",
+        "Exploratory Data Analysis (EDA)"
+      ],
+      "media": [
+        "https://drive.google.com/file/d/1slugyQVNahiLj_zlKUzdTd0mIowqARP8/view?usp=sharing"
+      ],
+      "createdAt": "2026-04-04T17:38:23.135Z",
+      "updatedAt": "2026-04-04T17:42:38.036Z",
+      "date": "Data Analyst / Python Developer",
+      "fullDetails": "Performed data cleaning, exploratory data analysis (EDA), and pattern identification to understand customer purchasing behavior and generate actionable insights. Customer analysis typically involves examining interactions and trends to improve decision-making.",
+      "githubUrl": "https://github.com/Sayeed-M/Customer-Pattern-Analysis-with-Python-and-jupyter.git"
+    },
+    {
       "id": "pro_1775323246547",
       "title": "DRONE VIDO",
       "description": "",
